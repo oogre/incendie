@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.example.python_version_check</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/path/to/python</string>
+        <string>/path/to/print_python_version.py</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/tmp/python_version_check_output.txt</string>
+</dict>
+</plist>

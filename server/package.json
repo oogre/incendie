@@ -1,0 +1,20 @@
+{
+  "name": "incendie",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./scripts/build.all.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "array.prototype.move": "0.0.4",
+    "serialport": "^12.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.18.9"
+  }
+}
