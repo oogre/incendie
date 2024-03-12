@@ -4,9 +4,7 @@
 #include <Preferences.h>
 #include "NetworkHelper.h"
 #include "BulbController.h"
-
-#define VALUE(string) #string
-#define TO_LITERAL(string) VALUE(string)
+#include "secret.h"
 
 Preferences prefs;
 NetworkHelper network;

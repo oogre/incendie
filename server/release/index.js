@@ -3,7 +3,7 @@
   incendie - index.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:50:13
-  @Last Modified time: 2024-03-12 00:44:09
+  @Last Modified time: 2024-03-12 00:47:14
 \*----------------------------------------*/
 "use strict";
 
@@ -18,6 +18,3 @@ const api = new _API.default({
     return -1;
   }
 });
-(async () => {
-  console.log(await db.select("MacAddress").setIndexOf("hello", 0));
-})();
