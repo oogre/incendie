@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   Brasseurs - DB.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 22:55:54
-  @Last Modified time: 2024-03-12 13:47:48
+  @Last Modified time: 2024-03-12 17:27:04
 \*----------------------------------------*/
 
 const {
@@ -70,11 +70,19 @@ class DB {
       name: "MacAddress",
       file: "./data/flames_mac_address.db",
       actions: self => {
+        const getIndexOf = async value => {
+          const list = await this.list(self);
+          return {
+            id: list.findIndex(line => line == value),
+            length: list.length
+          };
+        };
         return {
           indexOf: async MAC_ADDRESS => {
+            MAC_ADDRESS = MAC_ADDRESS.toString('hex');
             let {
               id
-            } = await this.indexOf(self, MAC_ADDRESS);
+            } = await getIndexOf(MAC_ADDRESS);
             ;
             if (RECORD_UNKNOWN_ADDRESS && id == -1) {
               id = await this.insert(self, MAC_ADDRESS);
@@ -85,16 +93,19 @@ class DB {
             return this.list(self);
           },
           record: async MAC_ADDRESS => {
+            MAC_ADDRESS = MAC_ADDRESS.toString('hex');
             return this.insert(self, MAC_ADDRESS);
           },
           move: async (MAC_ADDRESS, newId) => {
+            MAC_ADDRESS = MAC_ADDRESS.toString('hex');
             let {
               id: oldId,
               length
-            } = await this.indexOf(self, MAC_ADDRESS);
+            } = await getIndexOf(MAC_ADDRESS);
             ;
             if (oldId == -1) return;
             newId = Math.min(newId, length - 1);
+            const list = await this.list(self);
             list.move(oldId, newId);
             await WriteFile(self, list);
           }
@@ -107,14 +118,10 @@ class DB {
   }
   async insert(table, value) {
     await appendFile(table.file, value + "\n");
-    return this.list(table).length - 1;
-  }
-  async indexOf(table, value) {
-    const list = await this.list(self);
-    return {
-      id: list.findIndex(line => line == value),
-      length: list.length
-    };
+    const {
+      length
+    } = await this.list(table);
+    return length - 2;
   }
   async remove(table, value) {
     const list = await this.list(self);

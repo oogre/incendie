@@ -3,16 +3,23 @@
   incendie - index.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:50:13
-  @Last Modified time: 2024-03-12 13:42:01
+  @Last Modified time: 2024-03-12 17:02:28
 \*----------------------------------------*/
 "use strict";
 
 var _API = _interopRequireDefault(require("./API.js"));
 var _DB = _interopRequireDefault(require("./DB.js"));
 var _dotenv = _interopRequireDefault(require("dotenv"));
+var _WebServer = _interopRequireDefault(require("./WebServer.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 const db = new _DB.default();
 const api = new _API.default({
+  port: 8000,
+  DB: db,
+  getAccess: db.select("Access").getAccess
+});
+const webServer = new _WebServer.default({
+  port: 8080,
   DB: db,
   getAccess: db.select("Access").getAccess
 });

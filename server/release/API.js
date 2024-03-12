@@ -10,7 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   Brasseurs - API.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:51:33
-  @Last Modified time: 2024-03-12 12:36:55
+  @Last Modified time: 2024-03-12 17:12:21
 \*----------------------------------------*/
 
 class API {
@@ -31,6 +31,20 @@ class API {
           id: await DB.select("MacAddress").indexOf(MAC_ADDRESS)
         };
       }
+    }, {
+      method: "POST",
+      url: "/move",
+      accessLvl: 10,
+      action: async ({
+        MAC_ADDRESS,
+        newId
+      }) => {
+        console.log(MAC_ADDRESS, newId);
+        // MAC_ADDRESS = Buffer.from(Uint8Array.from(MAC_ADDRESS));
+        return {
+          id: await DB.select("MacAddress").indexOf(MAC_ADDRESS)
+        };
+      }
     }];
     this.server = _http.default.createServer(this.API_ENTRY_POINT.bind(this));
     this.server.listen(port, host, () => {
@@ -43,7 +57,9 @@ class API {
       body += chunk;
     });
     req.on('end', async () => {
+      console.log("body");
       console.log(body);
+      console.log("body");
       const {
         PWD,
         USER,
