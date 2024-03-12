@@ -4,11 +4,7 @@
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <nlohmann/json.hpp>
-// #include <xxtea-lib.h>
 #include "Tools.h"
-// #include <string> // string
-// #include <base64.hpp>
-WiFiUDP Udp;
 
 class ServerHelper{
 
