@@ -2,16 +2,13 @@
   Brasseurs - API.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:51:33
-  @Last Modified time: 2024-03-12 00:45:37
+  @Last Modified time: 2024-03-12 12:36:55
 \*----------------------------------------*/
 import http from "http";
 
-
-
-
 export default class API {
-	constructor({host='0.0.0.0', port='8000', hasAccess=()=>-1, DB}){
-		this.hasAccess = hasAccess;
+	constructor({host='0.0.0.0', port='8000', getAccess, DB}){
+		this.getAccess = getAccess;
 
 		this.access_points = [{
 			method : "POST",
@@ -39,7 +36,7 @@ export default class API {
 		req.on('end', async () => {
 			console.log(body);
 			const {PWD, USER, data} = JSON.parse(body);
-			const accessLvl = this.hasAccess(USER, PWD);
+			const accessLvl = await this.getAccess(USER, PWD);
 			if(accessLvl<0){
 				res.writeHead(401);
 				res.end();

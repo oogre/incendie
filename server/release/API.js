@@ -10,17 +10,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   Brasseurs - API.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:51:33
-  @Last Modified time: 2024-03-12 00:45:37
+  @Last Modified time: 2024-03-12 12:36:55
 \*----------------------------------------*/
 
 class API {
   constructor({
     host = '0.0.0.0',
     port = '8000',
-    hasAccess = () => -1,
+    getAccess,
     DB
   }) {
-    this.hasAccess = hasAccess;
+    this.getAccess = getAccess;
     this.access_points = [{
       method: "POST",
       url: "/register",
@@ -49,7 +49,7 @@ class API {
         USER,
         data
       } = JSON.parse(body);
-      const accessLvl = this.hasAccess(USER, PWD);
+      const accessLvl = await this.getAccess(USER, PWD);
       if (accessLvl < 0) {
         res.writeHead(401);
         res.end();
