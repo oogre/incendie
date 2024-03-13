@@ -2,7 +2,7 @@
   Brasseurs - API.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:51:33
-  @Last Modified time: 2024-03-12 17:12:21
+  @Last Modified time: 2024-03-13 19:47:19
 \*----------------------------------------*/
 import http from "http";
 
@@ -35,7 +35,7 @@ export default class API {
 		this.server = http.createServer(this.API_ENTRY_POINT.bind(this));
 
 		this.server.listen(port, host, () => {
-			console.log(`Server is running on http://${host}:${port}`);
+			console.log(`API Server Ready : HTTP Listening on ${port}`)
 		});
 	}
 
@@ -45,9 +45,7 @@ export default class API {
 			body += chunk;
 		});
 		req.on('end', async () => {
-			console.log("body");
 			console.log(body);
-			console.log("body");
 			const {PWD, USER, data} = JSON.parse(body);
 			const accessLvl = await this.getAccess(USER, PWD);
 			if(accessLvl<0){

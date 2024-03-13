@@ -8,7 +8,7 @@ exports.default = void 0;
   Brasseurs - WebServer.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-12 13:56:00
-  @Last Modified time: 2024-03-12 17:25:42
+  @Last Modified time: 2024-03-13 19:29:46
 \*----------------------------------------*/
 const express = require('express');
 const path = require('path');
@@ -41,7 +41,7 @@ class WebServer {
       res.status(200).json(bulbs);
     });
     app.listen(port, () => {
-      console.log("Server successfully running on port 8080");
+      console.log(`WEB Server Ready : HTTP Listening on ${port}`);
     });
   }
 }

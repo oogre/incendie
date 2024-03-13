@@ -14,7 +14,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   Brasseurs - DB.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 22:55:54
-  @Last Modified time: 2024-03-12 17:27:04
+  @Last Modified time: 2024-03-13 18:26:38
 \*----------------------------------------*/
 
 const {
@@ -140,4 +140,4 @@ class DB {
     return table.actions(table);
   }
 }
-exports.default = DB;
+var _default = exports.default = new DB(); //so it is a singleton

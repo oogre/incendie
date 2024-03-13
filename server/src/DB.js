@@ -2,7 +2,7 @@
   Brasseurs - DB.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 22:55:54
-  @Last Modified time: 2024-03-12 17:27:04
+  @Last Modified time: 2024-03-13 18:26:38
 \*----------------------------------------*/
 import fs from 'fs';
 import util from 'util';
@@ -31,7 +31,7 @@ const ReadFile = async ({file})=>{
 	return content.split("\n");
 }
 
-export default class DB{
+class DB{
 	constructor(){
 		this.tables = [{
 			name : "Access",
@@ -121,3 +121,6 @@ export default class DB{
 		return table.actions(table);
 	}
 }
+
+
+export default new DB(); //so it is a singleton

@@ -10,7 +10,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   Brasseurs - API.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:51:33
-  @Last Modified time: 2024-03-12 17:12:21
+  @Last Modified time: 2024-03-13 19:47:19
 \*----------------------------------------*/
 
 class API {
@@ -48,7 +48,7 @@ class API {
     }];
     this.server = _http.default.createServer(this.API_ENTRY_POINT.bind(this));
     this.server.listen(port, host, () => {
-      console.log(`Server is running on http://${host}:${port}`);
+      console.log(`API Server Ready : HTTP Listening on ${port}`);
     });
   }
   API_ENTRY_POINT(req, res) {
@@ -57,9 +57,7 @@ class API {
       body += chunk;
     });
     req.on('end', async () => {
-      console.log("body");
       console.log(body);
-      console.log("body");
       const {
         PWD,
         USER,

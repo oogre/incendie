@@ -28,6 +28,7 @@ class NetworkHelper{
             this->ctrlPacketHandler = packetHandler;
         }
         int begin(Tools::RunHandler<bool> connectionHandler = Tools::DO_NOTHING) {
+
             status = STARTING;
             
             WiFi.begin(conf.getSSID(), conf.getPWD());
@@ -49,8 +50,8 @@ class NetworkHelper{
                 Udp.begin(conf.getInPort());
                 Serial.printf("Now listening at IP %s, UDP port %d\n", WiFi.localIP().toString().c_str(), conf.getInPort());
                 status = ONLINE;
-                
-            }else if(WiFi.status() == WL_NO_SSID_AVAIL || WiFi.status() == WL_WRONG_PASSWORD){
+            }
+            else if(WiFi.status() == WL_NO_SSID_AVAIL || WiFi.status() == WL_WRONG_PASSWORD){
                 WiFi.disconnect(true, true);
                 WiFi.setHostname(conf.getDefaultSSID_PWD().c_str());
                 
@@ -93,18 +94,19 @@ class NetworkHelper{
 
 
 
-        void update(){
+        bool update(){
             if(confServer){
                 confServer->handleClient();
             }
-
-            // const int packetSize = Udp.parsePacket();
-            // if (packetSize){
-            //     const uint8_t * buffer = (const uint8_t *)malloc(packetSize);
-            //     Udp.read((char*)buffer, packetSize);
-            //     ctrlPacketHandler.run(buffer, packetSize);
-            //     delete buffer;
-            // }
+            
+            const int packetSize = Udp.parsePacket();
+            if (packetSize){
+                const uint8_t * buffer = (const uint8_t *)malloc(packetSize);
+                Udp.read((char*)buffer, packetSize);
+                ctrlPacketHandler.run(buffer, packetSize);
+                delete buffer;
+            }
+            return WiFi.isConnected();
         }
       
         

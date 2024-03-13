@@ -1,6 +1,4 @@
 #include <Arduino.h>
-#include <ESP8266WiFi.h>
-#include <WiFiUdp.h>
 #include <Preferences.h>
 #include "NetworkHelper.h"
 #include "BulbController.h"
@@ -14,6 +12,8 @@ uint16_t myID = 2;
 
 void setup() {
   Serial.begin(115200);
+  while(!Serial){delay(1);}
+
   BulbController::OFF();
   
   prefs.begin(PROJECT_ID.c_str(), false);
@@ -51,18 +51,14 @@ void setup() {
     Serial.println("MyId : "+String(myID));
   }
 
-  if(network.is(NetworkHelper::Status::ONLINE)){
-
-  }
-
   BulbController::OFF();
   BulbController::BLINK(4, 100, 100);
   BulbController::OFF();
 }
 
 void loop() {
-  network.update();
-  if(network.is(NetworkHelper::Status::OFFLINE)){
+ 
+  if(!network.update()){
     return BulbController::FLAME(millis() * 0.1);
   }
 }

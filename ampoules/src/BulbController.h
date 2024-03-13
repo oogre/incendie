@@ -27,6 +27,7 @@ class BulbController{
         static void setLum(uint8_t value){
             pinMode(0, OUTPUT);
             analogWrite(0, value);
+            // Serial.println("Flame");
             // Serial.println("setLUM : " + String(value, HEX) + "\n");
         }
 
@@ -54,6 +55,7 @@ class BulbController{
         }
 
         static void FLAME(float time){
+            // Serial.println("Flame");
             setLum(inoise8(1, 1, time));
         }
 
