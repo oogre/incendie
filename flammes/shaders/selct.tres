@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c8qbdjbjtf7cx"]
+
+[ext_resource type="Shader" path="res://shaders/basic.gdshader" id="1_2lec6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_2lec6")
+shader_parameter/red = 1.902
+shader_parameter/green = 1.955
+shader_parameter/blue = 1.259

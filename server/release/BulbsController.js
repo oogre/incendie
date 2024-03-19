@@ -11,7 +11,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   incendie - BulbsController.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-13 18:20:19
-  @Last Modified time: 2024-03-13 21:22:04
+  @Last Modified time: 2024-03-17 14:16:12
 \*----------------------------------------*/
 
 const server = _dgram.default.createSocket('udp4');
@@ -32,9 +32,6 @@ const send = async buffer => {
       if (err) reject(err);else resolve();
     });
   });
-};
-const sigmoid = x => {
-  return Math.exp(x) / (Math.exp(x) + 1);
 };
 class BulbsController {
   constructor({
@@ -60,7 +57,7 @@ class BulbsController {
       const anim = Animator(bulbsCount);
       let t0 = Date.now();
       while (true) {
-        const time = (Date.now() - t0) * 0.003;
+        const time = (Date.now() - t0) * 0.0003;
         await send(Buffer.from(anim.SINE(time)));
         await delay(20);
       }

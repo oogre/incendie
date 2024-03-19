@@ -8,7 +8,7 @@ exports.default = void 0;
   Brasseurs - WebServer.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-12 13:56:00
-  @Last Modified time: 2024-03-13 19:29:46
+  @Last Modified time: 2024-03-19 21:40:04
 \*----------------------------------------*/
 const express = require('express');
 const path = require('path');
@@ -28,6 +28,13 @@ class WebServer {
       bulbs = bulbs.filter(bulb => typeof bulb !== "string" || bulb.trim() !== "");
       res.render('listBulb', {
         bulbs: bulbs
+      });
+    });
+    app.get('/listRaw', async (req, res) => {
+      let bulbs = await DB.select("MacAddress").list();
+      bulbs = bulbs.filter(bulb => typeof bulb !== "string" || bulb.trim() !== "");
+      res.json({
+        bulbs
       });
     });
     app.post('/move', async (req, res) => {

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://byymbhjh3v8qv"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_wilal"]
+[ext_resource type="Script" path="res://Camera3D.gd" id="2_yhwaj"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_wilal")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.255799, -0.50313, 0.825486, 0.0314085, 0.849119, 0.527267, -0.96622, 0.160802, -0.201401, 2.37062, 1.68895, -0.688917)
+script = ExtResource("2_yhwaj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.756938, 0.368002, -0.540018, 0, 0.826364, 0.563137, 0.653487, -0.42626, 0.625506, -1.23449, 1.55895, 1.85647)
+
+[node name="Bulbs" type="Node3D" parent="."]

@@ -3,7 +3,7 @@
   incendie - index.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:50:13
-  @Last Modified time: 2024-03-13 21:29:05
+  @Last Modified time: 2024-03-19 23:53:37
 \*----------------------------------------*/
 "use strict";
 
@@ -23,11 +23,6 @@ const webServer = new _WebServer.default({
   port: 8080,
   getAccess: _DB.default.select("Access").getAccess
 });
-
-// const bulbs = new BulbsController({
-//     DB
-// });
-
 const {
   ADMIN_USER,
   ADMIN_PWD,
