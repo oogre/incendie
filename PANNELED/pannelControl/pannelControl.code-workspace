@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "ampoules",
+			"path": "../../ampoules"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"array": "cpp",
+			"cmath": "cpp"
+		}
+	}
+}

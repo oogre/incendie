@@ -1,36 +1,30 @@
-#include <Arduino.h>
-#include <Preferences.h>
+#include <ArduinoOTA.h>
+#include <EEPROM.h>
 #include "NetworkHelper.h"
 #include "BulbController.h"
 #include "secret.h"
 
-Preferences prefs;
 NetworkHelper network;
 
-const String PROJECT_ID = "incendie";
-uint16_t myID = 2;
+
+uint16_t myID = 0;
 
 void setup() {
+
   Serial.begin(115200);
   while(!Serial){delay(1);}
 
   BulbController::OFF();
   
-  prefs.begin(PROJECT_ID.c_str(), false);
-
-  prefs.clear();
-
-  NetworkHelper::ConnectionConf conf = NetworkHelper::ConnectionConf()
-                                        .setDefaultSSID_PWD(PROJECT_ID)
-                                        .setUser(prefs.getString("user", TO_LITERAL(DEFAULT__USER)))
-                                        .setPass(prefs.getString("pass", TO_LITERAL(DEFAULT__PASS)))
-                                        .setKey(prefs.getString("key", TO_LITERAL(DEFAULT__KEY)))
-                                        .setServerName(prefs.getString("SERVER_NAME", TO_LITERAL(DEFAULT__SERVER)))
-                                        .setSSID(prefs.getString("SSID", TO_LITERAL(DEFAULT__SSID)))
-                                        .setPWD(prefs.getString("PWD", TO_LITERAL(DEFAULT__PWD)))
-                                        .setInPort(prefs.getUInt("inPort", 8888))
-                                        .setOutPort(prefs.getUInt("outPort", 9999));
-
+  NetworkHelper::Conf conf = NetworkHelper::Conf()
+                              .setSSID(TO_LITERAL(DEFAULT__SSID)) // at live show
+                              .setPWD(TO_LITERAL(DEFAULT__PWD)) // at live show
+                              .setUser(TO_LITERAL(DEFAULT__USER))
+                              .setPass(TO_LITERAL(DEFAULT__PASS))
+                              .setKey(TO_LITERAL(DEFAULT__KEY))
+                              .setServerName(TO_LITERAL(DEFAULT__SERVER))
+                              .setServerPort(DEFAULT__SERVER__PORT)
+                              .setInPort(DEFAULT__UDP_IN__PORT);
   network = NetworkHelper(conf);
 
   network.onControlReceived({
@@ -39,16 +33,32 @@ void setup() {
     }
   });
 
-  int id = network.begin({
+  NetworkHelper::Status status = network.begin({
     [](){
-      BulbController::animSine( fmod(millis() / 3000.0f, 1.0f) );
+      ArduinoOTA.setHostname(network.conf.getFlammeId().c_str());
+      ArduinoOTA.begin();
+      BulbController::animSine(fmod(millis() / 3000.0f, 1.0f) );
       return true;
     }
   });
 
-  if(id != -1){
-    myID = (uint32_t)id;
-    Serial.println("MyId : "+String(myID));
+  if(status == NetworkHelper::Status::EXHIBITION){
+    status = network.runExhibition();
+    // myID = (uint32_t)id;
+  }  
+  
+  if(status == NetworkHelper::Status::ONLINE){
+    status = network.runOnline();
+    // myID = (uint32_t)id;
+  }
+
+  if(status == NetworkHelper::Status::NO_NETWORK){
+    status = network.runNoNetwork();
+  }
+  
+  if(status == NetworkHelper::Status::NONE){
+    ESP.restart();
+    return;
   }
 
   BulbController::OFF();
@@ -57,8 +67,9 @@ void setup() {
 }
 
 void loop() {
- 
-  if(!network.update()){
-    return BulbController::FLAME(millis() * 0.1);
-  }
+  ArduinoOTA.handle();
+  // if(!network.update()){
+  //   return BulbController::FLAME(millis() * 0.1);
+  // }
+  BulbController::ON();
 }

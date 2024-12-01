@@ -1,7 +1,7 @@
 #ifndef ServerHelper_h
 #define ServerHelper_h
 
-#include <Arduino.h>
+// #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <nlohmann/json.hpp>
 #include "Tools.h"
@@ -55,14 +55,14 @@ class ServerHelper{
                     return json;
                 }
 
-                virtual BaseRequest & send(const String serverName){
+                virtual BaseRequest & send(const String serverName, uint16_t serverPort){
                     
                     
                     Serial.print("Connection");
                     bool success = Tools::idle({
-                        [this, serverName]() {
+                        [this, serverName, serverPort]() {
                             Serial.print(".");
-                            return client.connect(serverName, 8000);
+                            return client.connect(serverName, serverPort);
                         }
                     }, 30000, 1000);
                     Serial.println("Done");

@@ -1,35 +1,58 @@
 class_name Bulb extends CSGBox3D
 
-static var COUNTER = 0
+const bulbMat = preload("res://shaders/selct.tres")
+var _red : float = 0;
+var _green : float = 0;
+var _blue : float = 0;
 
-static var selectedBulbMat = preload("res://shaders/selct.tres")
-static var unselectedBulbMat = preload("res://shaders/unselct.tres")
+var n;
+@export var old_position:Vector3
 
-var ID = 0
-var MAC_ADDRESS
-var isSelected = false
+signal selectChange
+signal translateHandler
+signal setPositionHandler(macAddress, position)
 
-func get_rand_pos():
-	return randf_range(-2, 2)
+var MAC_ADDRESS:Array
+var id:int
 
-func select():
-	isSelected = true
-	material = selectedBulbMat
-	return self
-	
-func unselect():
-	isSelected = false
-	material = unselectedBulbMat
-	pass
-	
-func _init(MAC_ADDRESS):
-	self.MAC_ADDRESS = MAC_ADDRESS
-	self.ID = Bulb.COUNTER
-	
+
+
+var _selected:bool = false
+@export var isSelected :  bool :
+	set(value):
+		_selected = value
+		if(value):
+			light = 255
+		else:
+			light = 0
+	get:
+		return _selected
+		
+		
+var _light : int = 0;
+@export_range (0, 255) var light : float :
+	get:
+		return _light
+	set(value):
+		if(isSelected):
+			_light = 255
+		else:
+			_light = int(value)
+		var l  = _light / 127.0
+		_red   = l
+		_green = l * 0.75
+		_blue  = l * 0.25
+		
+func _init(_id, rawBulb):
+	#n = FastNoiseLite.new()
+	#n.noise_seed = _id
+	material = bulbMat.duplicate(true)
+	self.id = _id
+	self.MAC_ADDRESS = rawBulb.MAC_ADDRESS
+	self.name = str(_id) + " " + Tools.formatMacAddress(PackedByteArray(rawBulb.MAC_ADDRESS).hex_encode())
 	var area = Area3D.new()
 	var area_shape = CollisionShape3D.new()
 	var shape = BoxShape3D.new()
-	
 	area_shape.shape = shape
 	area_shape.disabled = false
 	area.add_child(area_shape)
@@ -37,10 +60,23 @@ func _init(MAC_ADDRESS):
 	
 	use_collision = true
 	collision_layer = 1
-	position = Vector3(get_rand_pos(), get_rand_pos(), get_rand_pos())
-	rotation = Vector3(get_rand_pos(), get_rand_pos(), get_rand_pos()).normalized() * PI
+	size = Vector3(0.3, 0.5, 0.3)
+	position = Vector3(rawBulb.x, rawBulb.y, rawBulb.z)
+	old_position = position
+	
+	translateHandler.connect(func():
+		setPositionHandler.emit(self.MAC_ADDRESS, [position.x, position.y, position.z])
+	)
+	isSelected = false
 
-	unselect()
+func _process(_delta):
+	if(old_position != position):
+		old_position = position
+		var signalId:String = translateHandler.get_name() + " on " + str(translateHandler.get_object_id())
+		Tools.deferredSignal(signalId, 1.0, func():
+			translateHandler.emit()
+		)
 	
-	Bulb.COUNTER += 1
-	
+	material.set_shader_parameter("red",  _red);
+	material.set_shader_parameter("green", _green);
+	material.set_shader_parameter("blue",  _blue);

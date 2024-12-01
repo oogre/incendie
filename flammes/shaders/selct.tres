@@ -3,8 +3,9 @@
 [ext_resource type="Shader" path="res://shaders/basic.gdshader" id="1_2lec6"]
 
 [resource]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("1_2lec6")
-shader_parameter/red = 1.902
-shader_parameter/green = 1.955
-shader_parameter/blue = 1.259
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465

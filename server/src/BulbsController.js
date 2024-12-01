@@ -2,7 +2,7 @@
   incendie - BulbsController.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-13 18:20:19
-  @Last Modified time: 2024-03-17 14:16:12
+  @Last Modified time: 2024-04-01 12:59:17
 \*----------------------------------------*/
 
 import UDP from 'dgram';
@@ -47,7 +47,7 @@ export default class BulbsController{
 			})
 		])
 		.then(([bulbs])=>{
-			return bulbs.length - 1
+			return bulbs.length
 		})
 		.then((bulbsCount)=>{
 			readyHandler();
@@ -60,7 +60,7 @@ export default class BulbsController{
 				const time = (Date.now() - t0) * 0.0003;
 				
 				await send(
-					Buffer.from( anim.SINE(time) )
+					Buffer.from( anim.SQUARE(time) )
 				);
 				await delay(20);
 			}

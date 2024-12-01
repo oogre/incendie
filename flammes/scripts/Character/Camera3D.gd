@@ -2,7 +2,7 @@ extends Camera3D
 
 var mouse = Vector2()
 
-var selected = null
+var currentFocus = null
 var Ctrled = false
 
 # Called when the node enters the scene tree for the first time.
@@ -32,12 +32,12 @@ func get_selection() :
 	var end = project_position(mouse.position, 1000)
 	var query = PhysicsRayQueryParameters3D.create(start, end)
 	var result = worldspace.intersect_ray(query)
-	#print(result)
+	
 	if result.has("collider"):
-		if(selected != null):
-			selected.unselect()
-		if(selected != result.collider) :
-			selected = result.collider
-			selected.select()
+		if(!!currentFocus):
+			currentFocus.isSelected = false
+		if(currentFocus != result.collider) :
+			currentFocus = result.collider
+			currentFocus.isSelected = true
 		else : 
-			selected = null
+			currentFocus = null

@@ -2,7 +2,7 @@
   Brasseurs - API.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 20:51:33
-  @Last Modified time: 2024-03-13 19:47:19
+  @Last Modified time: 2024-10-13 19:29:48
 \*----------------------------------------*/
 import http from "http";
 
@@ -31,6 +31,15 @@ export default class API {
 					id : await DB.select("MacAddress").indexOf(MAC_ADDRESS)
 				}
 			}
+		},{
+			method : "POST",
+			url : "/setPosition",
+			accessLvl : 10,
+			action : async ([MAC_ADDRESS, [x, y, z]]) => {
+				return {
+					id : await DB.select("MacAddress").setPosition(MAC_ADDRESS, x, y, z)
+				}
+			}
 		}];
 		this.server = http.createServer(this.API_ENTRY_POINT.bind(this));
 
@@ -46,6 +55,11 @@ export default class API {
 		});
 		req.on('end', async () => {
 			console.log(body);
+			if(!body){
+				res.writeHead(401);
+				res.end();
+				return;
+			}
 			const {PWD, USER, data} = JSON.parse(body);
 			const accessLvl = await this.getAccess(USER, PWD);
 			if(accessLvl<0){

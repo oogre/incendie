@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>4🔥4</title>
+  <style>
+    html, body{
+      overflow: hidden;
+      height: 100%;
+      background: rgb(35, 25, 25);
+      color: rgb(225, 235, 235);
+    }
+    body{
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .fireplace{
+      font-size: 10em;
+    } 
+    .mirror{
+      transform: scaleX(-1);
+    } 
+  </style>
+</head>
+<body>
+  <div class="fireplace">
+    <div>🔥</div>
+  </div>
+  <h3>incendie</h3>
+  <h1>Rien à brûler ici.</h1>
+  <script type="text/javascript">
+    const fireplace = document.querySelector(".fireplace div");
+    const fireplaceWrapper = document.querySelector(".fireplace");
+    setInterval(()=>{
+      fireplace.classList.toggle("mirror")
+      fireplaceWrapper.style.transform= `rotate(${(Math.random() * 2 -1) * 15}deg)`
+    }, 120);
+
+  </script>
+</body>

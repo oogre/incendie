@@ -1,8 +1,8 @@
 #ifndef BulbController_h
 #define BulbController_h
 
-#include <Arduino.h>
-#include <FastLED.h>
+// #include <Arduino.h>
+// #include <FastLED.h>
 
 class Math {
     public :
@@ -56,7 +56,8 @@ class BulbController{
 
         static void FLAME(float time){
             // Serial.println("Flame");
-            setLum(inoise8(1, 1, time));
+            // setLum(inoise8(1, 1, time));
+            setLum(255);
         }
 
     private : 

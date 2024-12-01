@@ -5,18 +5,23 @@ const BulbClass = preload("res://scripts/Bulb.gd")
 
 var bulbs = []
 var incendie
+var osc
 
 func _ready():
-	Engine.max_fps = 25
-	incendie = IncendieServerClass.new()
-	add_child(incendie)
-	createBulbs()
-		
+	print("bonjour")
+	
+	#Engine.max_fps = 25
+	#incendie = IncendieServerClass.new()
+	#add_child(incendie)
+	#createBulbs()
+	pass
+	
 func _process(_delta):
-	incendie.controlBulbs(bulbs.map(func(bulb):
-		return int(bulb.isSelected ) * 255
-	))
-
+	#osc._process(_delta)
+	#incendie.controlBulbs(bulbs.map(func(bulb):
+		#return int(bulb.isSelected ) * 255
+	#))
+	pass
 func createBulbs():
 	incendie.getBulbs(func(ids):
 		bulbs = ids.map(func(id):
@@ -25,3 +30,4 @@ func createBulbs():
 			return bulb
 		)
 	)
+	pass

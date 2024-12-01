@@ -1,0 +1,28 @@
+{
+  "name": "server.indendie",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "./scripts/build.all.sh",
+    "launch": "./scripts/run.sh",
+    "stop": "./scripts/stop.sh",
+    "raz": "./scripts/razdb.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.3",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.2",
+    "mongoose-id-autoincrement": "^1.0.4",
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.16.7",
+    "@babel/core": "^7.16.7",
+    "@babel/preset-env": "^7.18.9",
+    "dotenv": "^16.4.5"
+  }
+}

@@ -1,16 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://byymbhjh3v8qv"]
+[gd_scene load_steps=6 format=3 uid="uid://byymbhjh3v8qv"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_wilal"]
-[ext_resource type="Script" path="res://Camera3D.gd" id="2_yhwaj"]
+[ext_resource type="Script" path="res://scripts/testMain.gd" id="1_pkur6"]
+[ext_resource type="PackedScene" uid="uid://cmjwbb42ka4fg" path="res://3dModels/brasseurs.tscn" id="7_0lfqd"]
+[ext_resource type="PackedScene" uid="uid://cedkwpprijs8v" path="res://character/freeCam.tscn" id="8_mjn2a"]
+[ext_resource type="Script" path="res://scripts/server_incendie.gd" id="8_pyal2"]
+[ext_resource type="Script" path="res://scripts/Character/character_body_3d.gd" id="9_lkp35"]
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_wilal")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.255799, -0.50313, 0.825486, 0.0314085, 0.849119, 0.527267, -0.96622, 0.160802, -0.201401, 2.37062, 1.68895, -0.688917)
-script = ExtResource("2_yhwaj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150413, 0, -42.1376)
+script = ExtResource("1_pkur6")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.756938, 0.368002, -0.540018, 0, 0.826364, 0.563137, 0.653487, -0.42626, 0.625506, -1.23449, 1.55895, 1.85647)
+transform = Transform3D(-0.201044, 0.551638, -0.809492, 4.20339e-08, 0.826364, 0.563136, 0.979582, 0.113215, -0.166136, 59.9224, 58.0115, -315.787)
+light_color = Color(0.930245, 0.942755, 0.912921, 1)
+light_energy = 2.286
+light_indirect_energy = 2.286
+light_angular_distance = 46.61
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.52894, 0)
+light_color = Color(0.978213, 0.772328, 0.770443, 1)
+omni_range = 2275.74
+omni_attenuation = 0.245
 
 [node name="Bulbs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.83482, 22.9455, -16.9641)
+
+[node name="MODEL" parent="." instance=ExtResource("7_0lfqd")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("8_mjn2a")]
+script = ExtResource("9_lkp35")
+
+[node name="server_incendie" type="Node" parent="."]
+script = ExtResource("8_pyal2")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]

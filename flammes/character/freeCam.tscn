@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cedkwpprijs8v"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sjorn"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1283, 4.20238, 35.9851)
+
+[node name="Rotation_Helper" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Rotation_Helper"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_sjorn")

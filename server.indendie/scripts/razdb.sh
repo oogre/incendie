@@ -1,0 +1,1 @@
+mongosh incendie --eval "db.dropDatabase();"

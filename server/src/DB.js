@@ -2,7 +2,7 @@
   Brasseurs - DB.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-11 22:55:54
-  @Last Modified time: 2024-03-13 18:26:38
+  @Last Modified time: 2024-06-26 12:49:35
 \*----------------------------------------*/
 import fs from 'fs';
 import util from 'util';
@@ -66,7 +66,7 @@ class DB{
 				const getIndexOf = async(value) => {
 					const list = await this.list(self);
 					return {
-						id : list.findIndex(line=>line == value), 
+						id : list.findIndex(line=>line.startsWith(value)), 
 						length : list.length
 					};
 				}
@@ -74,18 +74,41 @@ class DB{
 				return {
 					indexOf : async (MAC_ADDRESS) => {
 						MAC_ADDRESS = MAC_ADDRESS.toString('hex');
+						console.log(MAC_ADDRESS)
 						let {id} = await getIndexOf(MAC_ADDRESS);;
+						console.log(id)
 						if(RECORD_UNKNOWN_ADDRESS && id == -1){
-							id = await this.insert(self, MAC_ADDRESS);
+							id = await this.insert(self, [MAC_ADDRESS, 0, 0, 0].join(" "));
+							console.log(id)
 						}
 						return id;
 					},
 					list : async () => {
-						return this.list(self);
+						const list = await this.list(self);
+						return list
+							.filter(e => typeof e !== "string" || e.trim() !== "")
+							.map(e => {
+								const [MAC_ADDRESS, x, y, z] = e.split(" ");
+								return {
+									MAC_ADDRESS, 
+									x : parseFloat(x), 
+									y : parseFloat(y), 
+									z : parseFloat(z)
+								};
+							});
 					},
-					record : async (MAC_ADDRESS) => {
+					record : async (MAC_ADDRESS, x=0, y=0, z=0) => {
 						MAC_ADDRESS = MAC_ADDRESS.toString('hex');
-						return this.insert(self, MAC_ADDRESS);
+						return this.insert(self, [MAC_ADDRESS, x, y, z].join(" "));
+					},
+					setPosition : async (MAC_ADDRESS, x=0, y=0, z=0) => {
+						MAC_ADDRESS = MAC_ADDRESS.toString('hex');
+						let {id} = await getIndexOf(MAC_ADDRESS);
+						if(id == -1)return;
+						const list = await this.list(self);
+						list[id]=[MAC_ADDRESS, x, y, z].join(" ")
+						await WriteFile(self, list);
+						return id;
 					},
 					move : async (MAC_ADDRESS, newId) => {
 						MAC_ADDRESS = MAC_ADDRESS.toString('hex');

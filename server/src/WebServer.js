@@ -2,7 +2,7 @@
   Brasseurs - WebServer.js
   @author Evrard Vincent (vincent@ogre.be)
   @Date:   2024-03-12 13:56:00
-  @Last Modified time: 2024-03-19 21:40:04
+  @Last Modified time: 2024-03-29 09:15:04
 \*----------------------------------------*/
 const express = require('express');
 const path = require('path');
@@ -24,10 +24,17 @@ export default class WebServer {
 		});
 
 		app.get('/listRaw', async(req, res) => {
-			
 			let bulbs = await DB.select("MacAddress").list();
-			bulbs = bulbs.filter(bulb => typeof bulb !== "string" || bulb.trim() !== "");
 			res.json({ bulbs });
+		});
+
+
+		app.get('/setPosition', async(req, res) => {
+			const {MAC_ADDRESS, x, y, z} = req.body;
+
+			DB.select("MacAddress").setPosition(MAC_ADDRESS, x, y, z);
+
+			res.json({ status : "ok" });
 		});
 
 		app.post('/move', async(req, res) => {
