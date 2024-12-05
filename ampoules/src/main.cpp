@@ -62,10 +62,13 @@ void setup() {
     }else{                      // MODE PERFORMANCE
       myID = result;
       UDPHelper * udp = new UDPHelper();
+      udp->begin();
       leaf = udp;
       udp->onControlReceived({
         [](const uint8_t * packet, const int lenght){
-          BulbController::setLum(*(packet+myID));
+          uint8_t value = *(packet+myID);
+          Serial.println(value);
+          BulbController::setLum(value);
         }
       });
 

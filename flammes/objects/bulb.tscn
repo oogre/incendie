@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bilu6satubjxn"]
+[gd_scene load_steps=4 format=3 uid="uid://bilu6satubjxn"]
 
 [ext_resource type="Material" uid="uid://crbugmjg2d20d" path="res://shaders/unselct.tres" id="1_s30vd"]
+[ext_resource type="Script" path="res://scripts/Bulb.gd" id="2_a5dwo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k3daw"]
 
@@ -9,6 +10,7 @@ transform = Transform3D(-0.691964, -0.400774, 0.600471, -0.69966, 0.167285, -0.6
 use_collision = true
 size = Vector3(0.05, 0.05, 0.05)
 material = ExtResource("1_s30vd")
+script = ExtResource("2_a5dwo")
 
 [node name="_Area3D_6" type="Area3D" parent="."]
 

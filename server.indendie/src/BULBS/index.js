@@ -4,17 +4,15 @@ dotenv.config();
 
 const server = UDP.createSocket('udp4')
 
+
 const IP = process.env.BULB_IP;
 const PORT = parseInt(process.env.BULB_OUT_PORT);
+const INPORT = parseInt(process.env.BULB_IN_PORT);
 
 
-const delay = (duration) => {
-  return new Promise(function(resolve, reject){
-    setTimeout(function(){
-      resolve();
-    }, duration)
-  });
-};
+server.bind(INPORT, ()=>{
+	server.setBroadcast(true);	
+});
 
 const BULBS = async () => {
 	let promise;
@@ -25,11 +23,12 @@ const BULBS = async () => {
 				return;
 			}
   			promise = new Promise ((resolve, reject)=>{
-    			server.send(buffer, PORT, IP, async (err) => {
-    				promise = undefined;
-      				if (err) reject(err);
-      				else resolve();
+					server.send(buffer, 0, buffer.length, PORT, IP, function(err) {
+        		promise = undefined;
+						if (err) reject(err);
+						else resolve();
     			});
+
   			});
   			return promise;
 		}
