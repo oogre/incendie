@@ -35,7 +35,7 @@ const Flamme = db => {
       });
       if (flamme.length != 0) {
         console.log(`this flamme already exists`);
-        return flamme;
+        return flamme[0];
       }
       const newFlamme = new Flamme({
         MacAddress,

@@ -1,75 +1,105 @@
 #include <ArduinoOTA.h>
 #include <EEPROM.h>
 #include "NetworkHelper.h"
+#include "ServerHelper.h"
 #include "BulbController.h"
 #include "secret.h"
-
-NetworkHelper network;
-
+#include "Tools.h"
+#include "WifiConfHelper.h"
+#include "UDPHelper.h"
 
 uint16_t myID = 0;
+Tools::MAC_ADDRESS macAddress = Tools::getMacAddress();
+BaseLeaf * leaf;
 
 void setup() {
-
   Serial.begin(115200);
   while(!Serial){delay(1);}
 
-  BulbController::OFF();
+  Serial.println("");
+  Serial.println("");
+  Serial.println("");
+
   
-  NetworkHelper::Conf conf = NetworkHelper::Conf()
-                              .setSSID(TO_LITERAL(DEFAULT__SSID)) // at live show
-                              .setPWD(TO_LITERAL(DEFAULT__PWD)) // at live show
-                              .setUser(TO_LITERAL(DEFAULT__USER))
-                              .setPass(TO_LITERAL(DEFAULT__PASS))
-                              .setKey(TO_LITERAL(DEFAULT__KEY))
-                              .setServerName(TO_LITERAL(DEFAULT__SERVER))
-                              .setServerPort(DEFAULT__SERVER__PORT)
-                              .setInPort(DEFAULT__UDP_IN__PORT);
-  network = NetworkHelper(conf);
+  uint16_t offsetStart = (macAddress[5] + macAddress[4] * 256) / 2;
 
-  network.onControlReceived({
-    [](const uint8_t * packet, const int lenght){
-      BulbController::setLum(*(packet+myID));
+ // WAIT somes milliseconds to avoid router connection bottleneck (min 0sec, max ~60sec)
+  Serial.printf("WAIT %sseconds", String(1 + offsetStart/1000).c_str());
+  bool on = false;
+  Tools::idle({
+    [on]() mutable {
+      Serial.print(".");
+      on = !on;
+      if(on){
+        BulbController::ON();
+      } else {
+        BulbController::OFF();
+      } 
+      return false;
     }
-  });
+  }, offsetStart, 500);
+  Serial.println("DONE");
 
-  NetworkHelper::Status status = network.begin({
+  // CONNECT TO incendie WIFI
+  bool isConnected = NetworkHelper::connect(TO_LITERAL(DEFAULT__SSID), TO_LITERAL(DEFAULT__PWD), {
     [](){
-      ArduinoOTA.setHostname(network.conf.getFlammeId().c_str());
-      ArduinoOTA.begin();
       BulbController::animSine(fmod(millis() / 3000.0f, 1.0f) );
       return true;
     }
   });
-
-  if(status == NetworkHelper::Status::EXHIBITION){
-    status = network.runExhibition();
-    // myID = (uint32_t)id;
-  }  
-  
-  if(status == NetworkHelper::Status::ONLINE){
-    status = network.runOnline();
-    // myID = (uint32_t)id;
-  }
-
-  if(status == NetworkHelper::Status::NO_NETWORK){
-    status = network.runNoNetwork();
-  }
-  
-  if(status == NetworkHelper::Status::NONE){
-    ESP.restart();
-    return;
-  }
-
   BulbController::OFF();
-  BulbController::BLINK(4, 100, 100);
-  BulbController::OFF();
+
+  if(isConnected){
+    ArduinoOTA.setHostname(Tools::getFlammeId().c_str());
+    ArduinoOTA.begin();
+    ServerHelper * api = new ServerHelper();
+    int result = api->begin();
+    delete api;
+    if(result == -1){           // MODE SIMULACRE
+      Serial.println("KO");
+      BulbController::BLINK(2, 50, 50);
+      BulbController::ON();
+    }else{                      // MODE PERFORMANCE
+      myID = result;
+      UDPHelper * udp = new UDPHelper();
+      leaf = udp;
+      udp->onControlReceived({
+        [](const uint8_t * packet, const int lenght){
+          BulbController::setLum(*(packet+myID));
+        }
+      });
+
+      BulbController::BLINK(2, 50, 50);
+      BulbController::OFF();
+    }
+  }else{
+    Tools::EEPROMHelper memory;
+    memory.begin();
+    Tools::Settings settings = memory.getSetings();
+    memory.end();
+    // CONNECT TO STORED WIFI
+    bool isConnectedStoredWifi = NetworkHelper::connect(settings.SSID, settings.PWD, {
+      [](){
+        BulbController::animSine(fmod(millis() / 3000.0f, 1.0f) );
+        return true;
+      }
+    });
+
+    if(isConnectedStoredWifi){  // MODE ONLINE
+      Serial.println("OK");
+      BulbController::BLINK(2, 250, 250);
+      BulbController::OFF();
+    }else{                      // MODE CONFIGURATION
+      leaf = new WifiConfHelper();
+      BulbController::BLINK(2, 250, 250);
+      BulbController::ON();
+    }
+  }
 }
 
-void loop() {
+void loop(){
   ArduinoOTA.handle();
-  // if(!network.update()){
-  //   return BulbController::FLAME(millis() * 0.1);
-  // }
-  BulbController::ON();
+  if(leaf != nullptr){
+    leaf->update();
+  }
 }

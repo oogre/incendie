@@ -94,13 +94,13 @@
   </div>
   
   <script>
-    let infoTimer;
+    let t;
     [...document.querySelectorAll(".info")].map(e=>{
       e.parentElement.addEventListener("mouseenter", ()=>{
-        infoTimer = setTimeout(()=>e.classList.remove("hide"), 750)
+        t = setTimeout(()=>e.classList.remove("hide"), 750)
       })
       const hide = ()=>{
-        clearTimeout(infoTimer);
+        clearTimeout(t);
         e.classList.add("hide")
       }
       e.parentElement.addEventListener("mouseleave", hide)
@@ -114,26 +114,21 @@
       });
       return response1.status;
     }
-    document.querySelector("form").addEventListener("submit", async (event)=>{
+    document.querySelector("form").addEventListener("submit", async event=>{
       event.preventDefault();
       const {value : ssid} = event.target[0];
       const {value : pwd} = event.target[1];
       setNetwork(ssid, pwd)
-        .then((data)=>console.log(data, "sent"))
+        .then(data=>console.log(data, "sent"))
         .catch(()=>console.log("error"))
       return false;
     })
-    const fireplace = document.querySelector(".fireplace div");
-    const fireplaceWrapper = document.querySelector(".fireplace");
-    
+    const f = document.querySelector(".fireplace div");
+    const fw = document.querySelector(".fireplace");
     setInterval(()=>{
-      fireplace.classList.toggle("mirror")
-      fireplaceWrapper.style.transform= `rotate(${(Math.random() * 2 -1) * 15}deg)`
+      f.classList.toggle("mirror")
+      fw.style.transform= `rotate(${(Math.random() * 2 -1) * 15}deg)`
     }, 120);
 
-    // setInterval(()=>{
-    //   document.title = document.title.replace(document.title.match(/\w/), "🔥")
-    // }, 500)
-    // document.title.split("")
   </script>
 </body>

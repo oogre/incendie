@@ -3,69 +3,87 @@
 
 #include <EEPROM.h>
 #include <Arduino.h>
+#include <ArduinoOTA.h>
+
 // #include <functional>
 // #include <utility>
 
 class Tools{
 
+    
+    
+
     public :
+        static const uint8_t MAX_STRING_LENGTH = 64;
+        struct Settings { 
+            char SSID[MAX_STRING_LENGTH] = "";
+            char PWD[MAX_STRING_LENGTH] = "";
+        };
+        typedef std::array<uint8_t, WL_MAC_ADDR_LENGTH> MAC_ADDRESS;
+    private :
+        union ADDRESS_CONVERTER {
+            MAC_ADDRESS macAddress;
+            uint8_t bytes[WL_MAC_ADDR_LENGTH];
+        };
+    public :
+        static MAC_ADDRESS getMacAddress(){
+            uint8_t macAdrs[WL_MAC_ADDR_LENGTH];
+            WiFi.macAddress(macAdrs);
+            ADDRESS_CONVERTER addressConverter;
+            memcpy (addressConverter.bytes, macAdrs, WL_MAC_ADDR_LENGTH);
+            return addressConverter.macAddress;
+        }
+        static String getFlammeId(){
+            MAC_ADDRESS macAddress = Tools::getMacAddress();
+            String result = "Flamme-";
+            String byte4 = String(macAddress[3], HEX);
+            byte4.toUpperCase();
+            String byte5 = String(macAddress[4], HEX);
+            byte5.toUpperCase();
+            String byte6 = String(macAddress[5], HEX);
+            byte6.toUpperCase();
+            return result + byte4 + byte5 + byte6;
+        }
+
+        static bool wait(uint16_t time){
+            uint32_t t0 = millis();
+            Serial.printf("WAIT %sseconds", String(1 + time/1000).c_str());
+            Tools::idle({
+                [t0]() mutable {
+                    if(millis()-t0 > 500){
+                        Serial.print(".");
+                        t0 = millis();
+                    }
+                    return false;
+                }
+            }, time, 10);
+            Serial.println("DONE");
+            return true;
+        }
     
     class EEPROMHelper{
-        const uint16_t LEN = 512;
-        const uint8_t STRING_MAX_LEN = 100;
-        
         public:
+            
             EEPROMHelper(){}
             void begin(){
-                EEPROM.begin(LEN);
+                EEPROM.begin(sizeof(Settings));
             }
 
-            void setId(uint16_t id){
-                uint8_t upperbyte=(uint8_t) id/256;
-                uint8_t lowerbyte=(uint8_t) id&255;
-                EEPROM.put(0, upperbyte);
-                EEPROM.put(1, lowerbyte);
-            }
-            uint16_t getId(){
-                uint16_t offset = 0;
-                uint8_t upperbyte;
-                uint8_t lowerbyte;
-                EEPROM.get(offset + 0, upperbyte);
-                EEPROM.get(offset + 1, lowerbyte);
-                return (uint16_t) (lowerbyte+256*upperbyte);
+            Settings getSetings(){
+                Settings settings;
+                EEPROM.get(0, settings);
+                return settings;
             }
 
-            void setSSID(String ssid){
-                setString(ssid, 2);
+            void setSetings(String SSID, String PWD){
+                Settings settings;
+                SSID.toCharArray(settings.SSID, SSID.length()+1);
+                PWD.toCharArray(settings.PWD, PWD.length()+1);
+                EEPROM.put(0, settings); //write data to array in ram 
+                EEPROM.commit();
             }
-            String getSSID(){
-                return getString(2);
-            }
-
-            void setPWD(String pwd){ 
-                setString(pwd, 2+STRING_MAX_LEN);
-            }
-            String getPWD(){ 
-                return getString(2+STRING_MAX_LEN);
-            }
-
-            void setString(String value, uint16_t offset){
-                uint8_t charLength =  (uint8_t) value.length();
-                for (uint8_t i = 0; i < charLength && i < STRING_MAX_LEN; ++i){
-                    EEPROM.write(offset + i, value[i]); 
-                }
-                EEPROM.write(offset + charLength, '\n');
-            }
-
-            String getString(uint16_t offset){
-                String value = "";
-                uint8_t charLength = STRING_MAX_LEN;
-                for (int i = 0; i < charLength; ++i){
-                    char tmp = char(EEPROM.read(offset + i));
-                    if(tmp == '\n') return value;
-                    value += tmp;
-                }
-                return "";
+            void end(){
+                EEPROM.end();
             }
     };
 
@@ -112,6 +130,7 @@ class Tools{
         virtual ~Tools(){
         }
 };
+
 
 Tools::RunHandler<bool> Tools::DO_NOTHING = {[]()->bool{return true;}};
 

@@ -34,7 +34,7 @@ const Flamme = (db) => {
 			const flamme = await Flamme.find({ MacAddress });
 			if(flamme.length!=0){
 				console.log(`this flamme already exists`)
-				return flamme;
+				return flamme[0];
 			}
 			const newFlamme = new Flamme({
 				MacAddress,

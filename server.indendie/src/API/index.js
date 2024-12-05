@@ -3,8 +3,6 @@ import express from 'express';
 import path from 'path';
 import DB from '../DB/index.js'
 
-
-
 const {
     API_PORT
 } = dotenv.config().parsed;
@@ -36,8 +34,8 @@ const API = async ()=>{
 		const MacAddress = request.body?.MacAddress;
 		if(!MacAddress)response.send(`error`);
 		const MAC_ADDRESS = Buffer.from(Uint8Array.from(MacAddress));
-		const flammes = await db.Flamme.create(MAC_ADDRESS);
-		response.send(flammes);
+		const flamme = await db.Flamme.create(MAC_ADDRESS);
+		response.send(`flamme id : ${flamme.unique_id}`);
 	});
 
 	app.post(`/setPosition`, async(request, response) => {

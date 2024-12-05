@@ -1,0 +1,11 @@
+.:53 {
+    ready
+    hosts {
+        10.0.0.2 incendie.humain.tv
+        fallthrough
+    }
+    loop
+    reload
+    errors
+    log
+}
