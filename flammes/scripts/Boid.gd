@@ -47,7 +47,6 @@ func _physics_process(_delta):
 		return forces
 	, [Vector3(), Vector3(), Vector3()])
 	
-	
 	cohesionForce = forces[0] - position
 	spreadForce = forces[1]
 	alignForce = forces[2] * 0.01

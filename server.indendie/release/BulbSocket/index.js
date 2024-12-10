@@ -9,41 +9,48 @@ var _index = _interopRequireDefault(require("../DB/index.js"));
 var _ws = require("ws");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const {
-  WS_GODOT
+  WS_BULB
 } = _dotenv.default.config().parsed;
 const eventHandlers = {
   bulbs: []
 };
-const WS = async () => {
+let clients = [];
+const BulbSocket = async () => {
   const db = await _index.default;
   const sockserver = new _ws.WebSocketServer({
-    port: WS_GODOT
+    port: WS_BULB
   });
   sockserver.on('connection', async ws => {
     console.log('New client connected!');
-    const flammes = await db.Flamme.all();
-    flammes.map(flamme => {
-      ws.send(JSON.stringify(flamme));
-    });
-    ws.on('message', data => {
-      eventHandlers.bulbs.forEach(async handler => await handler(data));
+    ws.on('message', async data => {
+      if (!Buffer.isBuffer(data) || data.length != 6) return;
+      const [flamme] = await db.Flamme.find(data);
+      if (!flamme) return;
+      clients.push({
+        unique_id: flamme.unique_id,
+        wsc: ws
+      });
     });
     ws.on('close', () => console.log('Client has disconnected!'));
     ws.onerror = function () {
       console.log('websocket error');
     };
   });
-  console.log("The WebSocket server is running on port 8080");
   return {
-    trigNewFlamme: flamme => {
-      sockserver.clients.forEach(client => {
-        client.send(JSON.stringify(flamme));
+    send: async buffer => {
+      clients = await clients.filter(async ({
+        unique_id,
+        wsc
+      }) => {
+        if (wsc.readyState === WebSocket.OPEN && unique_id < buffer.length) {
+          await wsc.send(buffer[unique_id], {
+            binary: true
+          });
+          return true;
+        }
+        return false;
       });
-    },
-    onBulbs: handler => {
-      if (typeof handler !== 'function') return;
-      eventHandlers.bulbs.push(handler);
     }
   };
 };
-var _default = exports.default = WS();
+var _default = exports.default = BulbSocket();

@@ -2,13 +2,17 @@ import dotenv from 'dotenv';
 import DB from '../DB/index.js'
 import { WebSocketServer } from 'ws'
 
+const {
+    WS_GODOT
+} = dotenv.config().parsed;
+
 const eventHandlers = {
 	bulbs : []
 }
 
 const WS = async () => {
 	const db = await DB;
-	const sockserver = new WebSocketServer({ port: 8080 })
+	const sockserver = new WebSocketServer({ port: WS_GODOT })
 	sockserver.on('connection', async ws => {
 		console.log('New client connected!');
 		const flammes = await db.Flamme.all();

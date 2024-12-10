@@ -29,11 +29,7 @@ class BulbController{
             analogWrite(0, value);
         }
 
-        static void animSine(float cursor){
-            float value = sin(cursor * TWO_PI) * 0.5 + 0.5;
-            value *= 255;
-            setLum((uint8_t)round(value));
-        }
+       
 
         static void ON(){
             setLum(255);

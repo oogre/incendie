@@ -4,7 +4,6 @@
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
 #include "Tools.h"
-#include <ESP8266Ping.h>
 #include "secret.h"
 #include "BaseLeaf.h"
 

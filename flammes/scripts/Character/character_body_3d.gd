@@ -27,17 +27,7 @@ func _input(event):
 		get_child(0).rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY * -1))
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 
-
-func _hit_building(area):
-	print("_hit_building, ", area)
-func _on_area_entered(area):
-	print("_on_area_entered, ", area)
-
-
 func _physics_process(delta: float) -> void:
-	
-	
-	
 	targetTime += delta;
 	if(targetTime >= targetDuration):
 		targetTime = 0
@@ -75,3 +65,9 @@ func _physics_process(delta: float) -> void:
 			velocity.y = move_toward(velocity.y, 0, SPEED)
 
 	move_and_slide()
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	$"../MODEL/Walls".visible = true
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	$"../MODEL/Walls".visible = false

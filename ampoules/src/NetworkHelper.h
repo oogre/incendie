@@ -6,7 +6,6 @@
 #include <WiFiUdp.h>
 #include <ESP8266WebServer.h>
 #include "Tools.h"
-#include <ESP8266Ping.h>
 // #include "ServerHelper.h"
 
 class NetworkHelper{

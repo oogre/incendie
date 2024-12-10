@@ -3,16 +3,19 @@
 #include "NetworkHelper.h"
 #include "ServerHelper.h"
 #include "BulbController.h"
+#include "Simulacre.h"
 #include "secret.h"
 #include "Tools.h"
 #include "WifiConfHelper.h"
 #include "UDPHelper.h"
+#include "WSHelper.h"
 
 uint16_t myID = 0;
 Tools::MAC_ADDRESS macAddress = Tools::getMacAddress();
 BaseLeaf * leaf;
 
 void setup() {
+  BulbController::OFF();
   Serial.begin(115200);
   while(!Serial){delay(1);}
 
@@ -21,29 +24,27 @@ void setup() {
   Serial.println("");
 
   
-  uint16_t offsetStart = (macAddress[5] + macAddress[4] * 256) / 2;
+  uint16_t offsetStart = (macAddress[5] + macAddress[4] * 256);
 
  // WAIT somes milliseconds to avoid router connection bottleneck (min 0sec, max ~60sec)
   Serial.printf("WAIT %sseconds", String(1 + offsetStart/1000).c_str());
-  bool on = false;
+  uint32_t t0 = millis();
   Tools::idle({
-    [on]() mutable {
+    [t0, offsetStart]() mutable {
       Serial.print(".");
-      on = !on;
-      if(on){
-        BulbController::ON();
-      } else {
-        BulbController::OFF();
-      } 
+      uint8_t l = uint8_t(((millis() - t0) / (float)offsetStart) * 255);
+      BulbController::setLum(l);
       return false;
     }
-  }, offsetStart, 500);
+  }, offsetStart, 100);
   Serial.println("DONE");
 
   // CONNECT TO incendie WIFI
+  t0 = millis();
   bool isConnected = NetworkHelper::connect(TO_LITERAL(DEFAULT__SSID), TO_LITERAL(DEFAULT__PWD), {
-    [](){
-      BulbController::animSine(fmod(millis() / 3000.0f, 1.0f) );
+    [t0](){
+      float t = sin(fmod((millis() - t0)/ 3000.0f, 1.0f) * TWO_PI - PI/2 ) * 0.5 + 0.5;
+      BulbController::setLum(int(t*255));
       return true;
     }
   });
@@ -56,9 +57,7 @@ void setup() {
     int result = api->begin();
     delete api;
     if(result == -1){           // MODE SIMULACRE
-      Serial.println("KO");
-      BulbController::BLINK(2, 50, 50);
-      BulbController::ON();
+      leaf = new Simulacre();
     }else{                      // MODE PERFORMANCE
       myID = result;
       UDPHelper * udp = new UDPHelper();
@@ -81,17 +80,30 @@ void setup() {
     Tools::Settings settings = memory.getSetings();
     memory.end();
     // CONNECT TO STORED WIFI
+    t0 = millis();
     bool isConnectedStoredWifi = NetworkHelper::connect(settings.SSID, settings.PWD, {
-      [](){
-        BulbController::animSine(fmod(millis() / 3000.0f, 1.0f) );
+      [t0](){
+        float t = sin(fmod((millis() - t0)/ 3000.0f, 1.0f) * TWO_PI - PI/2 ) * 0.5 + 0.5;
+        BulbController::setLum(int(t*255));
         return true;
       }
     });
 
     if(isConnectedStoredWifi){  // MODE ONLINE
-      Serial.println("OK");
-      BulbController::BLINK(2, 250, 250);
-      BulbController::OFF();
+      WSHelper * ws = new WSHelper();
+      ws->begin();
+      ws->onControlReceived({
+        [](const uint8_t value){
+          Serial.println(value);
+          BulbController::setLum(value);
+        }
+      });
+      ws->onDisconnected({
+        [&](){
+          leaf = new Simulacre();
+        }
+      });
+      leaf = ws;
     }else{                      // MODE CONFIGURATION
       leaf = new WifiConfHelper();
       BulbController::BLINK(2, 250, 250);

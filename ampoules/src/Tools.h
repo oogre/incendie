@@ -108,6 +108,30 @@ class Tools{
         };
     };
 
+
+
+    struct ControlLumHandler {
+        using ControlLumHandlerFn = std::function<void(const uint8_t)>;
+        ControlLumHandler() {};
+        ControlLumHandler(ControlLumHandlerFn dec) : run {std::move(dec)} {};
+        ControlLumHandlerFn run;
+        void operator()(const uint8_t p) {
+            this->run(p);
+        };
+    };
+
+
+
+    struct DisconnectedHandler {
+        using DisconnectedHandlerFn = std::function<void(void)>;
+        DisconnectedHandler() {};
+        DisconnectedHandler(DisconnectedHandlerFn dec) : run {std::move(dec)} {};
+        DisconnectedHandlerFn run;
+        void operator()() {
+            this->run();
+        };
+    };
+
     
     static Tools::RunHandler<bool> DO_NOTHING;
 

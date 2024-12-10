@@ -1,7 +1,9 @@
 @tool
 extends Node
 
-const bulbMat = preload("res://shaders/selct.tres")
+const Bulb = preload("res://bulb.tscn")
+
+const bulbMat = preload("res://shaders/bulb.tres")
 	
 var lightMaterials : Array;
 var lightResolution : int = 32;
@@ -38,7 +40,7 @@ func genMaterials():
 		lightMaterials.append(clone);
 
 func getMaterial(lum): # lum varying [0, 255]
-	var id = int(round(lum * byteToFloat * lightMaxId))
+	var id = max(0,min(lightMaxId, int(round(lum * byteToFloat * lightMaxId))))
 	return lightMaterials[id];
 	
 func createFlamme(id, MAC_ADDRESS, position):
@@ -49,7 +51,8 @@ func createFlamme(id, MAC_ADDRESS, position):
 		"z" : position[2]
 	}
 	
-	var bulb = Bulb.new()
+	
+	var bulb = Bulb.instantiate()
 	add_child(bulb)
 	bulb.with_data(id, rawBulb)
 	bulb.lightChanged.connect(onLightChange)
