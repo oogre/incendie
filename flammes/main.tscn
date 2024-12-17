@@ -60,7 +60,7 @@ shape = SubResource("SphereShape3D_6jxcp")
 [node name="Dancers" type="Node3D" parent="."]
 
 [node name="Dancer1" type="Node3D" parent="Dancers"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.50418, 20, -15)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 20, -15)
 script = ExtResource("12_ailyj")
-duration = 0.661
-moveType = 1
+lightType = 5
+moveType = 2

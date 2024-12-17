@@ -6,17 +6,17 @@ const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.2
 
-@export var targetDuration :  float = 10.0;
+@export var targetDuration :  float = 3.0;
 @export var targetTime :  float = 0;
-var target;
+
+var targetAngle : Vector3 = Vector3(0,0,0)
+var currentAngle : Vector3 = Vector3(0,0,0)
+var target : Bulb;
 var selfVelocity : Vector3;
-
-
-func _ready():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-	
-	
+var rotationHelper : Node3D;
+var bulbsWrapper : Bulbs;
+var lastControlInputAt : float;
+var backCounter : int = 0
 var _auto:bool = false
 @export var automaticMove :  bool :
 	set(value):
@@ -24,25 +24,51 @@ var _auto:bool = false
 	get:
 		return _auto
 
+func isAutomatic():
+	return Time.get_ticks_msec() - lastControlInputAt > 5000;
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	rotationHelper = $Rotation_Helper
+	bulbsWrapper = $"../Bulbs"
+
 func _input(event):
-	
-	if !automaticMove and event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-		get_child(0).rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY * -1))
+	lastControlInputAt = Time.get_ticks_msec();
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		rotationHelper.rotate_x(deg_to_rad(event.relative.y * MOUSE_SENSITIVITY * -1))
+		rotationHelper.rotation.x = max(min(rotationHelper.rotation.x, PI *0.3), PI * -0.3)
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 
+func getRotation() -> Vector3:
+	return Vector3(rotationHelper.rotation.x, self.rotation.y, 0)
+
+func setRotation(angle : Vector3) -> void:
+	rotationHelper.rotation = Vector3(angle.x, 0, 0)
+	self.rotation = Vector3(0, angle.y, 0)
+
+func lerpAngle(a : Vector3, b : Vector3, v) -> Vector3 : 
+	return Vector3( lerp_angle(a.x, b.x, v), lerp_angle(a.y, b.y, v), lerp_angle(a.z, b.z, v))
+
 func _physics_process(delta: float) -> void:
-	targetTime += delta;
-	if !target or targetTime >= targetDuration:
-		targetTime = 0
-		target = $"../Bulbs".getRandomBulb();
-		selfVelocity = Vector3(randf(), randf(), randf())
-		
-	if automaticMove :
-		var path = target.position - position;
-		velocity = (path + selfVelocity) * 10
-		
-		self.look_at(target.position)
-		print(target.name, ', ', target.position)
+	if isAutomatic() :
+		targetTime += delta;
+		if !target or targetTime >= targetDuration:
+			targetTime = 0
+			target = bulbsWrapper.getRandomBulb()
+			var move = target.global_position - self.global_position
+			if backCounter > 0 or move.length_squared() > 4000 :
+				if backCounter <= 0 :
+					backCounter = randi_range(1, 10)
+				selfVelocity = move.normalized()
+			else :
+				selfVelocity = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1))
+			backCounter-=1
+		currentAngle = getRotation()
+		setRotation(Vector3(0,0,0))
+		self.look_at(target.global_position);
+		targetAngle = self.rotation
+		setRotation(lerpAngle(currentAngle, targetAngle, 0.01))
+		position = position + selfVelocity * delta * 2
 	else :
 		var input_dir:Vector3
 		if Input.is_action_pressed("movement_forward"):
@@ -67,5 +93,5 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 			velocity.y = move_toward(velocity.y, 0, SPEED)
-
+	
 	move_and_slide()

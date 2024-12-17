@@ -4,7 +4,7 @@ class_name Bulb
 
 signal lightChanged(light, callback)
 
-var anims : Array[Dictionary]
+var anims : Array[Light]
 var id : int;
 var _selected:bool = false
 @export var isSelected :  bool :

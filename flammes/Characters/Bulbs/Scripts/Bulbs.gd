@@ -20,11 +20,14 @@ func clear():
 	for bulb in get_children():
 		bulb.free()
 
-func getLights():
+func getLights() -> PackedByteArray:
 	var bulbs = []
 	bulbs.resize(get_children().size())
+	#var t : float = sin(Time.get_ticks_msec() * 0.00025 * 2 * PI) * 0.5 + 0.5;
+	#print(t)
 	for bulb in get_children():
-		bulbs[bulb.id - 1] = int(bulb.light * bulb.light * 255)
+		bulbs[bulb.id - 1] = int(bulb.light * 255)
+		#bulbs[bulb.id - 1] = int(pow(t, 0.25) * 255)
 	return PackedByteArray(bulbs)
 
 func getRandomBulb(): 

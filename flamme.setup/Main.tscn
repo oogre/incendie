@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0vt4awjbm81m"]
+[gd_scene load_steps=10 format=3 uid="uid://0vt4awjbm81m"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_motic"]
 [ext_resource type="PackedScene" uid="uid://bbyesj56o35gr" path="res://Environnement/model.tscn" id="2_a2f6q"]
@@ -9,7 +9,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_steec"]
 
-[sub_resource type="Shader" id="Shader_rvxn7"]
+[sub_resource type="Shader" id="Shader_bbrlh"]
 code = "shader_type spatial;
 
 uniform float red : hint_range(0.0, 3.0);
@@ -30,42 +30,13 @@ void fragment() {
 //}
 "
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojaun"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddsqe"]
 resource_local_to_scene = true
 render_priority = 0
-shader = SubResource("Shader_rvxn7")
+shader = SubResource("Shader_bbrlh")
 shader_parameter/red = 0.0
 shader_parameter/green = 0.0
 shader_parameter/blue = 0.0
-
-[sub_resource type="Shader" id="Shader_c0xp1"]
-code = "shader_type spatial;
-
-uniform float red : hint_range(0.0, 3.0);
-uniform float green : hint_range(0.0, 3.0);
-uniform float blue : hint_range(0.0, 3.0);
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
-
-void fragment() {
-	// Called for every pixel the material is visible on.
-	ALBEDO = vec3(red, green, blue);
-}
-
-//void light() {
-	// Called for every pixel for every light affecting the material.
-	// Uncomment to replace the default light processing function with this one.
-//}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8a4x0"]
-resource_local_to_scene = true
-render_priority = 0
-shader = SubResource("Shader_c0xp1")
-shader_parameter/red = 2.0
-shader_parameter/green = 1.0
-shader_parameter/blue = 0.5
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_motic")
@@ -84,49 +55,43 @@ script = ExtResource("4_becy6")
 [node name="1 8C-CE-4E-D0-0A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.7878, 0, 0)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_ojaun")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
 
 [node name="2 A4-CF-12-FD-3F-E0" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.55242, 0, 0)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_ojaun")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
 
 [node name="3 30-83-98-BB-44-06" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.88919, 0, 0)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_ojaun")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
 
 [node name="4 84-F3-EB-1E-28-42" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.76324, 0, 0.1373)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_8a4x0")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
-isSelected = true
-light = 1.0
 
 [node name="5 E8-DB-84-B0-5A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.91347, 0, 0)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_8a4x0")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
-isSelected = true
-light = 1.0
 
 [node name="6 48-3F-DA-4A-94-CA" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6, 0, 0)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_8a4x0")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
-isSelected = true
-light = 1.0
 
 [node name="7 E8-DB-84-8A-9B-29" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.97813, 0, 0)
 mesh = SubResource("BoxMesh_steec")
-surface_material_override/0 = SubResource("ShaderMaterial_ojaun")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
 script = ExtResource("7_rprpp")
 
 [connection signal="newFlamme" from="Server" to="." method="_on_server_new_flamme"]

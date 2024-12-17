@@ -1,5 +1,6 @@
-extends CharacterBody3D
+extends Mover
 
+class_name Boid 
 #
 	#la cohésion : pour former un groupe, les boids se rapprochent les uns des autres ;
 	#la séparation : 2 boids ne peuvent pas se trouver au même endroit au même moment ;
@@ -16,12 +17,15 @@ var alignForce : Vector3
 var spreadDist:float = -1
 
 
-func _init():
+func _ready():
+	start()
 	position = Vector3( randf_range(-2, 2),  randf_range(-2, 2),  randf_range(-2, 2))
 	speed = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)).normalized() * 3
 	
 func _physics_process(_delta):
-	
+	if ! isReadyToMove() : 
+		return
+		
 	speed = speed + (cohesionForce + spreadForce + alignForce) * 0.05
 	position = position + speed * _delta
 	

@@ -30,6 +30,7 @@ func connectServer():
 	return true
 
 func send(data):
+	return
 	if conected :
 		socket.send(data)
 
