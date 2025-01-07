@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+//#!/usr/local/bin/node
 
 import DB from './DB/index.js'
 import API from './API/index.js'
