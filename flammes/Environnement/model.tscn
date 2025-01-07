@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbyesj56o35gr"]
+
+[ext_resource type="PackedScene" uid="uid://cmjwbb42ka4fg" path="res://Environnement/brasseurs.tscn" id="1_ujfjf"]
+[ext_resource type="Script" path="res://Environnement/Scripts/model.gd" id="2_gi04a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_urfhb"]
+size = Vector3(26.1277, 16.0208, 49.1704)
+
+[node name="MODEL" instance=ExtResource("1_ujfjf")]
+script = ExtResource("2_gi04a")
+
+[node name="Area3D" type="Area3D" parent="." index="0"]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="1stStage" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.328009, 22.5264, -25.7151)
+shape = SubResource("BoxShape3D_urfhb")
+
+[node name="Floor" type="CollisionShape3D" parent="Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.60557, 8.63035, -1.33365)
+shape = SubResource("BoxShape3D_urfhb")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

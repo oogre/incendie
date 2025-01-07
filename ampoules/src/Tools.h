@@ -3,7 +3,6 @@
 
 #include <EEPROM.h>
 #include <Arduino.h>
-#include <ArduinoOTA.h>
 
 // #include <functional>
 // #include <utility>
@@ -105,6 +104,30 @@ class Tools{
         ControlPacketHandlerFn run;
         void operator()(const uint8_t * p,  const int l) {
             this->run(p, l);
+        };
+    };
+
+
+
+    struct ControlLumHandler {
+        using ControlLumHandlerFn = std::function<void(const uint8_t)>;
+        ControlLumHandler() {};
+        ControlLumHandler(ControlLumHandlerFn dec) : run {std::move(dec)} {};
+        ControlLumHandlerFn run;
+        void operator()(const uint8_t p) {
+            this->run(p);
+        };
+    };
+
+
+
+    struct DisconnectedHandler {
+        using DisconnectedHandlerFn = std::function<void(void)>;
+        DisconnectedHandler() {};
+        DisconnectedHandler(DisconnectedHandlerFn dec) : run {std::move(dec)} {};
+        DisconnectedHandlerFn run;
+        void operator()() {
+            this->run();
         };
     };
 

@@ -41,6 +41,7 @@ const Flamme = (db) => {
 				position
 			});
 			const savedFlamme = await newFlamme.save();
+			console.log(`new Flamme ${savedFlamme}`);
 			return savedFlamme;
 		},
 		all : async () => {

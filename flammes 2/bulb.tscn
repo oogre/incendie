@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://hsvhoju2itsb"]
+
+[ext_resource type="Material" uid="uid://c8qbdjbjtf7cx" path="res://shaders/bulb.tres" id="1_bh06s"]
+[ext_resource type="Script" path="res://scripts/Bulb.gd" id="2_gsuc2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_steec"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1u2k"]
+
+[node name="Bulb" type="MeshInstance3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = ExtResource("1_bh06s")
+script = ExtResource("2_gsuc2")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_x1u2k")

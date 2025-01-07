@@ -32,14 +32,24 @@ func getValue(id:int):
 
 func add(value):
 	_myArguments.push_back(value)
-	if("PackedByteArray" == type_string(typeof(value))):
-		_myTypetag.push_back(0x62)
-	elif("String" == type_string(typeof(value))):
-		_myTypetag.push_back(0x73)
-	elif("int" == type_string(typeof(value))):
-		_myTypetag.push_back(0x69)
-	elif("float" == type_string(typeof(value))):
-		_myTypetag.push_back(0x66)
+	match typeof(value):
+		TYPE_FLOAT:
+			_myTypetag.push_back(0x66)
+		TYPE_STRING:
+			_myTypetag.push_back(0x73)
+		TYPE_INT:
+			_myTypetag.push_back(0x69)
+		TYPE_PACKED_BYTE_ARRAY:
+			_myTypetag.push_back(0x62)
+#
+#	if("PackedByteArray" == type_string(typeof(value))):
+#		_myTypetag.push_back(0x62)
+#	elif("String" == type_string(typeof(value))):
+#		_myTypetag.push_back(0x73)
+#	elif("int" == type_string(typeof(value))):
+#		_myTypetag.push_back(0x69)
+#	elif("float" == type_string(typeof(value))):
+		
 	return self
 
 func padSize(bytes:int): 
@@ -102,9 +112,13 @@ func toString():
 	return self.address + " " + data
 
 func _init(value):
-	if("PackedByteArray" == type_string(typeof(value))):
+	
+	
+	
+	if(TYPE_PACKED_BYTE_ARRAY == typeof(value)):
 		_parseMessage(value)
-	elif("String" == type_string(typeof(value))):
+	elif(TYPE_STRING
+	 == typeof(value)):
 		self.address = value
 
 func _parseMessage(theBytes):

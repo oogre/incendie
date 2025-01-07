@@ -1,68 +1,56 @@
-[gd_scene load_steps=11 format=3 uid="uid://byymbhjh3v8qv"]
+[gd_scene load_steps=13 format=3 uid="uid://byymbhjh3v8qv"]
 
-[ext_resource type="Script" path="res://scripts/testMain.gd" id="1_pkur6"]
-[ext_resource type="Script" path="res://Bulbs.gd" id="2_3f025"]
-[ext_resource type="Script" path="res://scripts/Bulb.gd" id="4_v25pd"]
-[ext_resource type="PackedScene" uid="uid://cmjwbb42ka4fg" path="res://3dModels/brasseurs.tscn" id="7_0lfqd"]
-[ext_resource type="PackedScene" uid="uid://cedkwpprijs8v" path="res://character/freeCam.tscn" id="8_mjn2a"]
-[ext_resource type="Script" path="res://scripts/server_incendie.gd" id="8_pyal2"]
-[ext_resource type="Script" path="res://scripts/Character/character_body_3d.gd" id="9_lkp35"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_pkur6"]
+[ext_resource type="Script" path="res://Characters/Bulbs/Scripts/Bulbs.gd" id="2_3f025"]
+[ext_resource type="PackedScene" uid="uid://bbyesj56o35gr" path="res://Environnement/model.tscn" id="4_pfplj"]
+[ext_resource type="Script" path="res://Characters/Dancers/Scripts/Dancers.gd" id="7_f8rxq"]
+[ext_resource type="PackedScene" uid="uid://cedkwpprijs8v" path="res://Characters/Camera/camera.tscn" id="8_mjn2a"]
+[ext_resource type="Script" path="res://Server/Scripts/server_incendie.gd" id="8_pyal2"]
+[ext_resource type="Script" path="res://Characters/Camera/Scripts/character_body_3d.gd" id="9_lkp35"]
+[ext_resource type="Script" path="res://Characters/Dancers/Scripts/Dancer.gd" id="12_ailyj"]
 
-[sub_resource type="Shader" id="Shader_udffx"]
-code = "shader_type spatial;
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x8tvs"]
+sky_top_color = Color(0.431373, 0.431373, 0.431373, 1)
+sky_horizon_color = Color(0.588235, 0.588235, 0.588235, 1)
+ground_bottom_color = Color(0.352941, 0.352941, 0.352941, 1)
+ground_horizon_color = Color(0.647059, 0.647059, 0.647059, 1)
 
-uniform float red : hint_range(0.0, 3.0);
-uniform float green : hint_range(0.0, 3.0);
-uniform float blue : hint_range(0.0, 3.0);
-void vertex() {
-	// Called for every vertex the material is visible on.
-}
+[sub_resource type="Sky" id="Sky_i0650"]
+sky_material = SubResource("ProceduralSkyMaterial_x8tvs")
 
-void fragment() {
-	// Called for every pixel the material is visible on.
-	ALBEDO = vec3(red, green, blue);
-}
+[sub_resource type="Environment" id="Environment_1nt4a"]
+background_mode = 2
+sky = SubResource("Sky_i0650")
+ambient_light_source = 3
+ambient_light_color = Color(0.103424, 0.309524, 0.517748, 1)
+reflected_light_source = 2
 
-//void light() {
-	// Called for every pixel for every light affecting the material.
-	// Uncomment to replace the default light processing function with this one.
-//}
-"
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qhv87"]
-resource_local_to_scene = true
-render_priority = 0
-shader = SubResource("Shader_udffx")
-shader_parameter/red = 1.54839
-shader_parameter/green = 0.774194
-shader_parameter/blue = 0.387097
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_yr431"]
-size = Vector3(27.4868, 15.5012, 70.7225)
+[sub_resource type="SphereShape3D" id="SphereShape3D_6jxcp"]
+radius = 0.857506
 
 [node name="Main" type="Node3D"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.150413, 0, -42.1376)
 script = ExtResource("1_pkur6")
-connection = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1nt4a")
 
 [node name="server_incendie" type="Node" parent="."]
 script = ExtResource("8_pyal2")
-conected = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.201044, 0.551638, -0.809492, 4.20339e-08, 0.826364, 0.563136, 0.979582, 0.113215, -0.166136, 59.9224, 58.0115, -315.787)
-light_color = Color(0.99, 0.8085, 0.5544, 1)
-light_energy = 8.714
-light_indirect_energy = 7.001
-light_volumetric_fog_energy = 2.286
-light_angular_distance = 24.11
+[node name="Lights" type="Node" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(-0.116671, 0.585172, 0.802472, 0, -0.80799, 0.589197, 0.99317, 0.068742, 0.0942688, 1198.6, 1160.23, -6357.88)
+light_color = Color(0.921607, 0.846808, 0.824997, 1)
+light_energy = 2.109
+light_bake_mode = 1
 directional_shadow_mode = 0
 directional_shadow_fade_start = 0.738
 directional_shadow_max_distance = 35.1
 directional_shadow_pancake_size = 32.8
 
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.52894, 0)
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.04082, 0)
 light_energy = 2.571
 light_indirect_energy = 3.907
 light_volumetric_fog_energy = 5.286
@@ -71,46 +59,29 @@ omni_attenuation = 0.286
 omni_shadow_mode = 0
 
 [node name="Bulbs" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.28, -24.8678)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -15)
 script = ExtResource("2_3f025")
 
-[node name="1 D8-BF-C0-0F-DA-32" type="CSGBox3D" parent="Bulbs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.50233, -16.6952, 11.9924)
-size = Vector3(0.3, 0.5, 0.3)
-material = SubResource("ShaderMaterial_qhv87")
-script = ExtResource("4_v25pd")
-light = 194.0
+[node name="MODEL" parent="." instance=ExtResource("4_pfplj")]
 
-[node name="2 A4-CF-12-FD-3F-E0" type="CSGBox3D" parent="Bulbs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.54488, -15.2022, 9.91244)
-size = Vector3(0.3, 0.5, 0.3)
-material = SubResource("ShaderMaterial_qhv87")
-script = ExtResource("4_v25pd")
-light = 200.0
-
-[node name="3 F4-CF-A2-79-CF-78" type="CSGBox3D" parent="Bulbs"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50019, -14.996, 13.3381)
-size = Vector3(0.3, 0.5, 0.3)
-material = SubResource("ShaderMaterial_qhv87")
-script = ExtResource("4_v25pd")
-light = 196.0
-
-[node name="MODEL" parent="." instance=ExtResource("7_0lfqd")]
-
-[node name="Area3D" type="Area3D" parent="MODEL"]
+[node name="Camera" parent="." instance=ExtResource("8_mjn2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58847, 3.74869, -7.56457)
 disable_mode = 2
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="MODEL/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107134, 25.2651, -22.4614)
-shape = SubResource("BoxShape3D_yr431")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MODEL/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.54767, 7.90995, -4.50956)
-shape = SubResource("BoxShape3D_yr431")
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("8_mjn2a")]
-disable_mode = 2
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("9_lkp35")
 targetDuration = 5.0
 
-[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Camera"]
+shape = SubResource("SphereShape3D_6jxcp")
+
+[node name="Dancers" type="Node3D" parent="."]
+script = ExtResource("7_f8rxq")
+
+[node name="Dancer2" type="Node3D" parent="Dancers"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
+script = ExtResource("12_ailyj")
+lightType = 3
+duration = 2.75
+moveType = 3
+dancerCount = 10

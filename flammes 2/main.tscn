@@ -1,0 +1,208 @@
+[gd_scene load_steps=26 format=3 uid="uid://byymbhjh3v8qv"]
+
+[ext_resource type="Script" path="res://scripts/testMain.gd" id="1_pkur6"]
+[ext_resource type="Script" path="res://scripts/Bulbs.gd" id="2_3f025"]
+[ext_resource type="PackedScene" uid="uid://hsvhoju2itsb" path="res://bulb.tscn" id="4_3pbef"]
+[ext_resource type="Shader" path="res://shaders/basic.gdshader" id="5_ig2ft"]
+[ext_resource type="PackedScene" uid="uid://cmjwbb42ka4fg" path="res://3dModels/brasseurs.tscn" id="7_0lfqd"]
+[ext_resource type="PackedScene" uid="uid://cedkwpprijs8v" path="res://Characters/freeCam.tscn" id="8_mjn2a"]
+[ext_resource type="Script" path="res://scripts/server_incendie.gd" id="8_pyal2"]
+[ext_resource type="Script" path="res://scripts/Character/character_body_3d.gd" id="9_lkp35"]
+[ext_resource type="Script" path="res://Characters/Dancers/Scripts/Anim1.gd" id="10_eeqyk"]
+[ext_resource type="Material" uid="uid://wmcea1y7fnha" path="res://Characters/Dancers/Materials/wireframe.tres" id="10_og2y6"]
+[ext_resource type="Script" path="res://Characters/Dancers/Scripts/dancer.gd" id="12_ailyj"]
+[ext_resource type="Script" path="res://Characters/Dancers/Scripts/dancer.body.gd" id="13_hebe4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_steec"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_16d7e"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfss3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_huglj"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5po0e"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3333"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_toqmi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vutb6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("5_ig2ft")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yr431"]
+size = Vector3(35.6153, 15.7724, 50.3952)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6jxcp"]
+radius = 0.857506
+
+[sub_resource type="BoxMesh" id="BoxMesh_u8uvc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlnnr"]
+flip_faces = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7sbfw"]
+
+[node name="Main" type="Node3D"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.150413, 0, -42.1376)
+script = ExtResource("1_pkur6")
+connection = true
+
+[node name="server_incendie" type="Node" parent="."]
+script = ExtResource("8_pyal2")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.201044, 0.551638, -0.809492, 4.20339e-08, 0.826364, 0.563136, 0.979582, 0.113215, -0.166136, 59.9224, 58.0115, -315.787)
+light_color = Color(0.907716, 0.803175, 0.907389, 1)
+light_energy = 2.863
+light_indirect_energy = 7.001
+light_volumetric_fog_energy = 2.286
+light_angular_distance = 24.11
+directional_shadow_mode = 0
+directional_shadow_fade_start = 0.738
+directional_shadow_max_distance = 35.1
+directional_shadow_pancake_size = 32.8
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.52894, 0)
+light_energy = 2.571
+light_indirect_energy = 3.907
+light_volumetric_fog_energy = 5.286
+omni_range = 1639.54
+omni_attenuation = 0.286
+omni_shadow_mode = 0
+
+[node name="Bulbs" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.28, -24.8678)
+script = ExtResource("2_3f025")
+
+[node name="1 8C-CE-4E-D0-0A-D8" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0.403931, -9.66587, 15.3629)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_16d7e")
+
+[node name="2 A4-CF-12-FD-3F-E0" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.59303, -17.9429, 7.60683)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_jfss3")
+
+[node name="3 30-83-98-BB-44-06" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.30618, -17.93, 8.80348)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_huglj")
+
+[node name="4 84-F3-EB-1E-28-42" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0.681259, -10.947, 14.4549)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_5po0e")
+
+[node name="5 E8-DB-84-B0-5A-D8" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.25492, -12.7249, 13.4256)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_l3333")
+
+[node name="6 48-3F-DA-4A-94-CA" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -8.77856, 15.6599)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_toqmi")
+
+[node name="7 E8-DB-84-8A-9B-29" parent="Bulbs" instance=ExtResource("4_3pbef")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.2751, -14.4535, 12.3807)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_vutb6")
+
+[node name="MODEL" parent="." instance=ExtResource("7_0lfqd")]
+
+[node name="Area3D" type="Area3D" parent="MODEL"]
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+
+[node name="1stStage" type="CollisionShape3D" parent="MODEL/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30148, 23.4319, -22)
+shape = SubResource("BoxShape3D_yr431")
+
+[node name="Floor" type="CollisionShape3D" parent="MODEL/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47384, 10.3396, -1.6173)
+shape = SubResource("BoxShape3D_yr431")
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("8_mjn2a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58847, 3.74869, -7.56457)
+disable_mode = 2
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("9_lkp35")
+targetDuration = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_6jxcp")
+
+[node name="Dancers" type="Node3D" parent="."]
+
+[node name="Dancer1" type="Node3D" parent="Dancers"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.79436, 7.49355, -16.9884)
+script = ExtResource("12_ailyj")
+
+[node name="Animator" type="Node" parent="Dancers/Dancer1"]
+script = ExtResource("10_eeqyk")
+
+[node name="Body" type="CharacterBody3D" parent="Dancers/Dancer1"]
+script = ExtResource("13_hebe4")
+
+[node name="Displayer" type="Node3D" parent="Dancers/Dancer1/Body"]
+
+[node name="Front" type="MeshInstance3D" parent="Dancers/Dancer1/Body/Displayer"]
+mesh = SubResource("BoxMesh_u8uvc")
+surface_material_override/0 = ExtResource("10_og2y6")
+
+[node name="Back" type="MeshInstance3D" parent="Dancers/Dancer1/Body/Displayer"]
+mesh = SubResource("BoxMesh_wlnnr")
+surface_material_override/0 = ExtResource("10_og2y6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Dancers/Dancer1/Body"]
+shape = SubResource("BoxShape3D_7sbfw")
+
+[connection signal="child_exiting_tree" from="." to="." method="_on_child_exiting_tree"]
+[connection signal="body_entered" from="MODEL/Area3D" to="CharacterBody3D" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="MODEL/Area3D" to="CharacterBody3D" method="_on_area_3d_body_exited"]

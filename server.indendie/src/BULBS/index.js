@@ -14,7 +14,7 @@ server.bind(INPORT, ()=>{
 	server.setBroadcast(true);	
 });
 
-const BULBS = async () => {
+const 	 = async () => {
 	let promise;
 	return {
 		send : async (buffer)=>{

@@ -31,6 +31,7 @@ const API = async () => {
   });
   app.post('/flamme', async (request, response) => {
     const MacAddress = request.body?.MacAddress;
+    console.log(MacAddress);
     if (!MacAddress) response.send(`error`);
     const MAC_ADDRESS = Buffer.from(Uint8Array.from(MacAddress));
     const flamme = await db.Flamme.create(MAC_ADDRESS);

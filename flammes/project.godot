@@ -18,8 +18,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Tools="*res://scripts/Tools.gd"
-GameState="*res://scripts/GameState.gd"
+Tools="*res://Scripts/Tools.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/mode=3
 
 [input]
 

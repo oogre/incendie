@@ -8,16 +8,19 @@ var _dotenv = _interopRequireDefault(require("dotenv"));
 var _index = _interopRequireDefault(require("../DB/index.js"));
 var _ws = require("ws");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+const {
+  WS_GODOT
+} = _dotenv.default.config().parsed;
 const eventHandlers = {
   bulbs: []
 };
 const WS = async () => {
   const db = await _index.default;
   const sockserver = new _ws.WebSocketServer({
-    port: 8080
+    port: WS_GODOT
   });
   sockserver.on('connection', async ws => {
-    console.log('New client connected!');
+    console.log('New GODOT client connected!');
     const flammes = await db.Flamme.all();
     flammes.map(flamme => {
       ws.send(JSON.stringify(flamme));

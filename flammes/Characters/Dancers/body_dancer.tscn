@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfwvasimtdfxn"]
+
+[ext_resource type="Material" uid="uid://wmcea1y7fnha" path="res://Characters/Dancers/Materials/wireframe.tres" id="1_k5wcx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7sbfw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_u8uvc"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wlnnr"]
+flip_faces = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dmeuv"]
+
+[node name="BodyDancer" type="CharacterBody3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_7sbfw")
+
+[node name="Displayer" type="Node3D" parent="."]
+
+[node name="Front" type="MeshInstance3D" parent="Displayer"]
+mesh = SubResource("BoxMesh_u8uvc")
+surface_material_override/0 = ExtResource("1_k5wcx")
+
+[node name="Back" type="MeshInstance3D" parent="Displayer"]
+mesh = SubResource("BoxMesh_wlnnr")
+surface_material_override/0 = ExtResource("1_k5wcx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dmeuv")
