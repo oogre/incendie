@@ -11,8 +11,9 @@ const LightsScripts : Array[Resource] = [
 	preload("res://Characters/Dancers/Scripts/Lights/Sine.gd"),
 	preload("res://Characters/Dancers/Scripts/Lights/Rect.gd"),
 	preload("res://Characters/Dancers/Scripts/Lights/Random.gd"),
+	preload("res://Characters/Dancers/Scripts/Lights/Fire.gd"),
 ]
-enum LIGHTS_TYPES { Nothing, Sawtooth, ReverseSawtooth, Sine, Rect, Random }
+enum LIGHTS_TYPES { Nothing, Sawtooth, ReverseSawtooth, Sine, Rect, Random, Fire }
 
 const MovesScripts : Array[Resource] = [
 	preload("res://Characters/Dancers/Scripts/Moves/Boid.gd"),

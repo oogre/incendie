@@ -81,7 +81,15 @@ script = ExtResource("7_f8rxq")
 [node name="Dancer2" type="Node3D" parent="Dancers"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
 script = ExtResource("12_ailyj")
-lightType = 3
-duration = 2.75
+lightType = 6
+duration = 10.0
 moveType = 3
 dancerCount = 10
+
+[node name="Dancer3" type="Node3D" parent="Dancers"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
+script = ExtResource("12_ailyj")
+lightType = 2
+duration = 3.0
+moveType = 3
+dancerCount = 3

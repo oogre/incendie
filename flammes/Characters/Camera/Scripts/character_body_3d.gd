@@ -7,7 +7,7 @@ const JUMP_VELOCITY = 4.5
 const MOUSE_SENSITIVITY = 0.2
 
 @export var automaticMoveDelay :  float = 10.0;
-@export var targetDuration :  float = 3.0;
+@export var targetDuration :  float = 10.0;
 @export var targetTime :  float = 0;
 
 var targetAngle : Vector3 = Vector3(0,0,0)
@@ -56,13 +56,13 @@ func _physics_process(delta: float) -> void:
 					backCounter = randi_range(1, 10)
 				selfVelocity = move.normalized()
 			else :
-				selfVelocity = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1))
+				selfVelocity = Vector3(randf_range(-1, 1), randf_range(-1, 1), randf_range(-1, 1)) * 0.3
 			backCounter-=1
 		currentAngle = getRotation()
 		setRotation(Vector3(0,0,0))
 		self.look_at(target.global_position);
 		targetAngle = self.rotation
-		setRotation(lerpAngle(currentAngle, targetAngle, 0.01))
+		setRotation(lerpAngle(currentAngle, targetAngle, 0.0025))
 		position = position + selfVelocity * delta * 2
 	else :
 		var input_dir:Vector3
