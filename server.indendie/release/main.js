@@ -8,6 +8,7 @@ var _BulbSocket = _interopRequireDefault(require("./BulbSocket"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 //#!/usr/local/bin/node
 
+process.title = "incendie";
 const delay = time => {
   return new Promise(r => {
     setTimeout(() => r(), time);

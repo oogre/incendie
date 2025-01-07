@@ -3,8 +3,9 @@
 # @Last Modified by:   ogre
 # @Last Modified time: 2024-03-11 20:48:23
 
+npm run stop
 npx babel --verbose --out-dir ./release/ ./src/
-
 rm ./release/incendie
 ln -s ./main.js ./release/incendie
 chmod +x ./release/main.js
+# npm run launch &

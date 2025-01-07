@@ -15,7 +15,7 @@ const BulbSocket = async () => {
 	const db = await DB;
 	const sockserver = new WebSocketServer	({ port: WS_BULB })
 	sockserver.on('connection', async ws => {
-		console.log('New client connected!');
+		console.log('New BULB client connected!');
 		ws.on('message', async data => {
 			if(!Buffer.isBuffer(data) || data.length != 6)
 				return;

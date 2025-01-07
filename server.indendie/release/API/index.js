@@ -30,11 +30,14 @@ const API = async () => {
     response.send(flammes);
   });
   app.post('/flamme', async (request, response) => {
+    const Hostname = request.body?.Hostname;
     const MacAddress = request.body?.MacAddress;
+    console.log(Hostname, MacAddress);
     if (!MacAddress) response.send(`error`);
     const MAC_ADDRESS = Buffer.from(Uint8Array.from(MacAddress));
     const flamme = await db.Flamme.create(MAC_ADDRESS);
     response.send(`flamme id : ${flamme.unique_id - 1}`);
+    console.log(`flamme id : ${flamme.unique_id - 1}`);
   });
   app.post(`/setPosition`, async (request, response) => {
     const MacAddress = request.body?.MacAddress;

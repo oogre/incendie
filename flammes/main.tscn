@@ -1,12 +1,29 @@
-[gd_scene load_steps=9 format=3 uid="uid://byymbhjh3v8qv"]
+[gd_scene load_steps=13 format=3 uid="uid://byymbhjh3v8qv"]
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_pkur6"]
 [ext_resource type="Script" path="res://Characters/Bulbs/Scripts/Bulbs.gd" id="2_3f025"]
 [ext_resource type="PackedScene" uid="uid://bbyesj56o35gr" path="res://Environnement/model.tscn" id="4_pfplj"]
+[ext_resource type="Script" path="res://Characters/Dancers/Scripts/Dancers.gd" id="7_f8rxq"]
 [ext_resource type="PackedScene" uid="uid://cedkwpprijs8v" path="res://Characters/Camera/camera.tscn" id="8_mjn2a"]
 [ext_resource type="Script" path="res://Server/Scripts/server_incendie.gd" id="8_pyal2"]
 [ext_resource type="Script" path="res://Characters/Camera/Scripts/character_body_3d.gd" id="9_lkp35"]
 [ext_resource type="Script" path="res://Characters/Dancers/Scripts/Dancer.gd" id="12_ailyj"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_x8tvs"]
+sky_top_color = Color(0.431373, 0.431373, 0.431373, 1)
+sky_horizon_color = Color(0.588235, 0.588235, 0.588235, 1)
+ground_bottom_color = Color(0.352941, 0.352941, 0.352941, 1)
+ground_horizon_color = Color(0.647059, 0.647059, 0.647059, 1)
+
+[sub_resource type="Sky" id="Sky_i0650"]
+sky_material = SubResource("ProceduralSkyMaterial_x8tvs")
+
+[sub_resource type="Environment" id="Environment_1nt4a"]
+background_mode = 2
+sky = SubResource("Sky_i0650")
+ambient_light_source = 3
+ambient_light_color = Color(0.103424, 0.309524, 0.517748, 1)
+reflected_light_source = 2
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6jxcp"]
 radius = 0.857506
@@ -14,18 +31,19 @@ radius = 0.857506
 [node name="Main" type="Node3D"]
 script = ExtResource("1_pkur6")
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1nt4a")
+
 [node name="server_incendie" type="Node" parent="."]
 script = ExtResource("8_pyal2")
 
 [node name="Lights" type="Node" parent="."]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
-transform = Transform3D(-0.201044, 0.551638, -0.809492, 4.20339e-08, 0.826364, 0.563136, 0.979582, 0.113215, -0.166136, 1198.6, 1160.23, -6357.88)
-light_color = Color(0.907716, 0.803175, 0.907389, 1)
-light_energy = 2.863
-light_indirect_energy = 7.001
-light_volumetric_fog_energy = 2.286
-light_angular_distance = 24.11
+transform = Transform3D(-0.116671, 0.585172, 0.802472, 0, -0.80799, 0.589197, 0.99317, 0.068742, 0.0942688, 1198.6, 1160.23, -6357.88)
+light_color = Color(0.921607, 0.846808, 0.824997, 1)
+light_energy = 2.109
+light_bake_mode = 1
 directional_shadow_mode = 0
 directional_shadow_fade_start = 0.738
 directional_shadow_max_distance = 35.1
@@ -58,9 +76,24 @@ targetDuration = 5.0
 shape = SubResource("SphereShape3D_6jxcp")
 
 [node name="Dancers" type="Node3D" parent="."]
+script = ExtResource("7_f8rxq")
 
-[node name="Dancer1" type="Node3D" parent="Dancers"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 20, -15)
+[node name="Dancer2" type="Node3D" parent="Dancers"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
 script = ExtResource("12_ailyj")
-lightType = 5
-moveType = 2
+lightType = 6
+duration = 10.0
+remove_on_exited = null
+moveType = 3
+dancerCount = 10
+delayBetween = null
+
+[node name="Dancer3" type="Node3D" parent="Dancers"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
+script = ExtResource("12_ailyj")
+lightType = 2
+duration = 3.0
+remove_on_exited = null
+moveType = 3
+dancerCount = 3
+delayBetween = null

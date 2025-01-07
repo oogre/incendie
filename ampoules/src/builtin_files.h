@@ -22,7 +22,6 @@ R"==(
         flex-direction: column;
     }    
     form{
-      font-size: x-large;
       display: flex;
       flex-direction: column;
     }
@@ -36,7 +35,6 @@ R"==(
     }
     input{
       padding: 5px;
-      font-size: x-large;
       margin: 5px 8px;
     }
 

@@ -3,7 +3,6 @@
 
 #include <EEPROM.h>
 #include <Arduino.h>
-#include <ArduinoOTA.h>
 
 // #include <functional>
 // #include <utility>

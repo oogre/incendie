@@ -70,13 +70,6 @@ class WSHelper : public BaseLeaf{
 
         bool update(){
             webSocket.loop();
-            // const int packetSize = Udp.parsePacket();
-            // if (packetSize){
-            //     const uint8_t * buffer = (const uint8_t *)malloc(packetSize);
-            //     Udp.read((char*)buffer, packetSize);
-            //     ctrlPacketHandler.run(buffer, packetSize);
-            //     delete buffer;
-            // }
             return WiFi.isConnected();
         }
 

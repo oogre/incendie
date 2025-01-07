@@ -14,7 +14,7 @@ const WS = async () => {
 	const db = await DB;
 	const sockserver = new WebSocketServer({ port: WS_GODOT })
 	sockserver.on('connection', async ws => {
-		console.log('New client connected!');
+		console.log('New GODOT client connected!');
 		const flammes = await db.Flamme.all();
 		flammes.map(flamme => {
 			ws.send(JSON.stringify(flamme))
@@ -27,7 +27,7 @@ const WS = async () => {
 			console.log('websocket error')
 		}
 	});
-	console.log("The WebSocket server is running on port 8080");
+	console.log(`The WebSocket server is running on port ${WS_GODOT}`);
 
 	return {
 		trigNewFlamme : flamme => {

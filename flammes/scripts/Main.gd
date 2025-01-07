@@ -3,6 +3,9 @@ extends Node
 var server : Server;
 var bulbs : Bulbs;
 var _connection : bool = false
+var osc : OSC
+signal oscOk(osc:OSC)
+
 @export var connection :  bool :
 	set(value):
 		if Engine.is_editor_hint():
@@ -26,7 +29,13 @@ func _ready() -> void:
 	server.connectServer()
 	connection = true
 	#Engine.max_fps = 24
-	pass
+	osc = OSC.new(10000, 8000, "127.0.0.1")
+	add_child(osc)
+	oscOk.emit(osc)
+	
+func _exit_tree():
+	osc.stop()
+	remove_child(osc)
 	
 func _process(_delta):
 	if bulbs.get_children().size() <= 0 :

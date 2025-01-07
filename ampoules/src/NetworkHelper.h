@@ -4,7 +4,6 @@
 // #include <Arduino.h>
 #include <ESP8266WiFi.h>
 #include <WiFiUdp.h>
-#include <ESP8266WebServer.h>
 #include "Tools.h"
 // #include "ServerHelper.h"
 
@@ -23,7 +22,7 @@ class NetworkHelper{
                     connectionHandler.run();
                     return WiFi.status() == WL_CONNECTED;
                 }
-            }, 10000, 10);
+            }, 30000, 10);
             Serial.println(value ? "DONE" : "FAIL");
             return value;
         }

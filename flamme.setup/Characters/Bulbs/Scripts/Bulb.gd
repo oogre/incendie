@@ -14,6 +14,7 @@ var MAC_ADDRESS:Array
 
 var anims : Array[Dictionary]
 
+var timaAtLightOn : float = 0
 var _selected:bool = false
 @export var isSelected :  bool :
 	set(value):
@@ -51,6 +52,7 @@ func with_data(_id, rawBulb):
 
 func _ready() -> void:
 	light = 0
+	timaAtLightOn = 0
 
 func _process(_delta):
 	if(old_position != position):
@@ -59,3 +61,12 @@ func _process(_delta):
 		Tools.deferredSignal(signalId, 1.0, func():
 			translateHandler.emit()
 		)
+	var t = Time.get_ticks_msec()
+	if !timaAtLightOn :
+		timaAtLightOn = 1
+	if isSelected and _light==1 and (t - timaAtLightOn) > 100.0 : 
+		_light = 0
+		timaAtLightOn = Time.get_ticks_msec()
+	elif isSelected and _light==0  and (t - timaAtLightOn) > 100.0 : 
+		_light = 1
+		timaAtLightOn = Time.get_ticks_msec()

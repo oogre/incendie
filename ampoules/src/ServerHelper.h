@@ -31,7 +31,9 @@ class ServerHelper : public BaseLeaf{
             }
 
             Tools::MAC_ADDRESS macAddress = Tools::getMacAddress();
-            String payload = "{\"MacAddress\":["+String(macAddress[0])+", "+String(macAddress[1])+", "+String(macAddress[2])+", "+String(macAddress[3])+", "+String(macAddress[4])+", "+String(macAddress[5])+"]}";
+            String hostname = Tools::getFlammeId().c_str();
+            String payload = "{\"Hostname\":\""+hostname+".local\", \"MacAddress\":["+String(macAddress[0])+", "+String(macAddress[1])+", "+String(macAddress[2])+", "+String(macAddress[3])+", "+String(macAddress[4])+", "+String(macAddress[5])+"]}";
+            Serial.println(payload);
             String req = "POST /flamme HTTP/1.1\r\n"
                         "Host: " + host + "\r\n"
                         "Content-Type: application/json\r\n"

@@ -1,5 +1,7 @@
 //#!/usr/local/bin/node
 
+process.title = "incendie"
+
 import DB from './DB/index.js'
 import API from './API/index.js'
 import WS from './WS/index.js'

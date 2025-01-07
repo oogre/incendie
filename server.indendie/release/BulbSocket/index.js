@@ -21,7 +21,7 @@ const BulbSocket = async () => {
     port: WS_BULB
   });
   sockserver.on('connection', async ws => {
-    console.log('New client connected!');
+    console.log('New BULB client connected!');
     ws.on('message', async data => {
       if (!Buffer.isBuffer(data) || data.length != 6) return;
       const [flamme] = await db.Flamme.find(data);

@@ -1,15 +1,971 @@
+<<<<<<< HEAD
+[gd_scene load_steps=131 format=3 uid="uid://0vt4awjbm81m"]
+=======
 [gd_scene load_steps=10 format=3 uid="uid://0vt4awjbm81m"]
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_motic"]
 [ext_resource type="PackedScene" uid="uid://bbyesj56o35gr" path="res://Environnement/model.tscn" id="2_a2f6q"]
 [ext_resource type="Script" path="res://Server/Scripts/server_incendie.gd" id="2_r3067"]
 [ext_resource type="Script" path="res://Characters/Bulbs/Scripts/Bulbs.gd" id="4_becy6"]
 [ext_resource type="PackedScene" uid="uid://hsvhoju2itsb" path="res://Characters/Bulbs/bulb.tscn" id="5_cmp2o"]
+<<<<<<< HEAD
+[ext_resource type="Shader" path="res://Characters/Bulbs/Materials/bulb.gdshader" id="6_6gcih"]
+=======
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 [ext_resource type="Script" path="res://Characters/Bulbs/Scripts/Bulb.gd" id="7_rprpp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_steec"]
 
+<<<<<<< HEAD
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4ed"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jogmr"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_elcmi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f231p"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3rqb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qtc5y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_csthf"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n7m22"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7d1qs"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7dgqd"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_da8by"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xwhmv"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttir0"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vid1p"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bvc54"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bei0v"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dfs1l"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqgq4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kguab"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhbvq"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_71slb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kluq1"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pm3ig"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p128j"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2fqtg"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ick47"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_obj7y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ptuo"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8kso"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t54nd"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y6pdb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc8ub"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dulx3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2evnr"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akvh3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6e5t1"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i8uef"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bdmsa"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y38k5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vm7qi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_huxq4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7lilg"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3cs8x"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6r3y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j6xna"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_olc8o"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2pmkw"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e34em"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndluu"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v0dsk"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2lsia"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_egkd3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nr1be"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vfg4n"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kopss"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdb7d"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_de54c"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3rvjg"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kegt6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5l1b"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwbf2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0axr"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ko5pb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lq5tj"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ol8l"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dg423"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4x4n2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6c42p"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1d4vx"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnd3l"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_613xx"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43gg8"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eetl7"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a3y0f"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmv42"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ndtxy"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d5ry6"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f145v"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xvsam"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_beijh"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_64ol5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3xbye"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xang2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w03nt"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iamhl"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58jsa"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2p41e"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tc4wt"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hrjpt"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82d8q"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e1h1y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p6ypu"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_86ux3"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ibcl"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d65a0"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4afuc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ugi21"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fo8u"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fmbne"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ka5f5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_65h4o"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jo6y"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ntnfk"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_32jd5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fbbya"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7r2ip"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mdsc"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_46dyb"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lpw6t"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wcct8"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_81j85"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ydruf"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bumr2"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_86b5f"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_my8la"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lajgx"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fm6h1"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbh76"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("6_6gcih")
+shader_parameter/red = 1.324
+shader_parameter/green = 1.025
+shader_parameter/blue = 1.465
+
+[sub_resource type="Shader" id="Shader_pqirx"]
+=======
 [sub_resource type="Shader" id="Shader_bbrlh"]
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 code = "shader_type spatial;
 
 uniform float red : hint_range(0.0, 3.0);
@@ -30,14 +986,53 @@ void fragment() {
 //}
 "
 
+<<<<<<< HEAD
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7o5l"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_pqirx")
+=======
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddsqe"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_bbrlh")
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 shader_parameter/red = 0.0
 shader_parameter/green = 0.0
 shader_parameter/blue = 0.0
 
+<<<<<<< HEAD
+[sub_resource type="Shader" id="Shader_558kd"]
+code = "shader_type spatial;
+
+uniform float red : hint_range(0.0, 3.0);
+uniform float green : hint_range(0.0, 3.0);
+uniform float blue : hint_range(0.0, 3.0);
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+	ALBEDO = vec3(red, green, blue);
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the material.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk638"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_558kd")
+shader_parameter/red = 2.0
+shader_parameter/green = 1.0
+shader_parameter/blue = 0.5
+
+=======
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 [node name="Main" type="Node3D"]
 script = ExtResource("1_motic")
 connection = true
@@ -52,6 +1047,1016 @@ conected = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -15)
 script = ExtResource("4_becy6")
 
+<<<<<<< HEAD
+[node name="1 48-3F-DA-65-01-BD" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 0, -7.1226)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_yi4ed")
+script = ExtResource("7_rprpp")
+
+[node name="2 C4-5B-BE-C3-03-94" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.58985, -12.2242, -2.20511)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_jogmr")
+script = ExtResource("7_rprpp")
+
+[node name="3 5C-CF-7F-19-04-D0" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0.93666, 14.2864, -4.72953)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_elcmi")
+script = ExtResource("7_rprpp")
+
+[node name="4 24-A1-60-3F-06-52" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.34827, 3.0829, -15.299)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_f231p")
+script = ExtResource("7_rprpp")
+
+[node name="5 60-01-94-4A-07-0F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 15.1114, -9.24034, -9.38595)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_a3rqb")
+script = ExtResource("7_rprpp")
+
+[node name="6 E0-98-06-1C-07-F6" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.46459, -5.70073, 13.1673)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_qtc5y")
+script = ExtResource("7_rprpp")
+
+[node name="7 E0-98-06-1C-07-E9" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.92369, -3.2276, -2.86842)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_csthf")
+script = ExtResource("7_rprpp")
+
+[node name="8 E0-98-06-1C-08-F0" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -5.21144, -12.9747)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_n7m22")
+script = ExtResource("7_rprpp")
+
+[node name="9 D8-BF-C0-06-09-90" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.00156, -5.88144, -16.7504)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_7d1qs")
+script = ExtResource("7_rprpp")
+
+[node name="10 8C-CE-4E-D0-0A-DA" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -1.4632, 2.84903, -22.5274)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_7dgqd")
+script = ExtResource("7_rprpp")
+
+[node name="11 B4-E6-2D-2E-0B-F1" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.0309, -3.61803, 1.34879)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_da8by")
+script = ExtResource("7_rprpp")
+
+[node name="12 8C-CE-4E-D0-0A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -4.75464, -2.70453, -23.4336)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_xwhmv")
+script = ExtResource("7_rprpp")
+
+[node name="13 CC-50-E3-FC-0F-7D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.49873, 0, -13.1425)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ttir0")
+script = ExtResource("7_rprpp")
+
+[node name="14 F4-CF-A2-FC-0D-0B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.69502, -2.15978, 0.962194)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_vid1p")
+script = ExtResource("7_rprpp")
+
+[node name="15 A4-E5-7C-A2-0D-9A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.81733, 0.361038, 3.31212)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_bvc54")
+script = ExtResource("7_rprpp")
+
+[node name="16 48-3F-DA-52-10-B2" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.1905, -6.14466, 12.8882)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_bei0v")
+script = ExtResource("7_rprpp")
+
+[node name="17 84-F3-EB-E2-12-23" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.01564, 3.56581, -0.332667)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_dfs1l")
+script = ExtResource("7_rprpp")
+
+[node name="18 B4-8A-0A-DC-10-6F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.32294, -8.30914, 18.4521)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_iqgq4")
+script = ExtResource("7_rprpp")
+
+[node name="19 C8-2B-96-1A-13-87" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.19718, 13.6848, -3.05966)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_kguab")
+script = ExtResource("7_rprpp")
+
+[node name="20 DC-4F-22-48-14-E2" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.16491, -12.1369, -2.13604)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_vhbvq")
+script = ExtResource("7_rprpp")
+
+[node name="21 2C-F4-32-3D-0D-05" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -2.46004, 0.856655)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_71slb")
+script = ExtResource("7_rprpp")
+
+[node name="22 5C-CF-7F-AC-0E-72" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -11.2583, -1.02564, -6.5689)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_kluq1")
+script = ExtResource("7_rprpp")
+
+[node name="23 84-F3-EB-1E-1A-78" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.5808, -5.73549, 12.2079)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_pm3ig")
+script = ExtResource("7_rprpp")
+
+[node name="24 84-F3-EB-E3-19-E6" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.66684, -11.1764, -12.7072)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_p128j")
+script = ExtResource("7_rprpp")
+
+[node name="25 C8-2B-96-1F-16-5F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -22.8307, -7.71258, -14.0773)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_2fqtg")
+script = ExtResource("7_rprpp")
+
+[node name="26 2C-F4-32-3D-18-82" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.15701, -9.13802, 13.1496)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ick47")
+script = ExtResource("7_rprpp")
+
+[node name="27 D8-BF-C0-CB-1C-FE" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.04535, -1.47464, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_obj7y")
+script = ExtResource("7_rprpp")
+
+[node name="28 BC-FF-4D-0D-1B-45" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.6101, -6.16586, 12.3834)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_1ptuo")
+script = ExtResource("7_rprpp")
+
+[node name="29 60-01-94-03-1E-5D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.46466, 14.334, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_k8kso")
+script = ExtResource("7_rprpp")
+
+[node name="30 84-F3-EB-1E-1F-C6" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.37193, 0, -7.44984)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_t54nd")
+script = ExtResource("7_rprpp")
+
+[node name="31 84-F3-EB-1E-1B-E5" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.51843, 0, -12.842)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_y6pdb")
+script = ExtResource("7_rprpp")
+
+[node name="32 18-FE-34-EE-1B-8D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.0173, -3.19367, 3.48188)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_sc8ub")
+script = ExtResource("7_rprpp")
+
+[node name="33 84-F3-EB-44-08-DD" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -9.88526, 8.96102)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_dulx3")
+script = ExtResource("7_rprpp")
+
+[node name="34 5C-CF-7F-F8-17-27" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -11.2325, -9.67758, -10.3838)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_2evnr")
+script = ExtResource("7_rprpp")
+
+[node name="35 18-FE-34-D2-14-6A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.9723, -5.18127, 13.0165)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_akvh3")
+script = ExtResource("7_rprpp")
+
+[node name="36 E8-68-E7-D9-17-0A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.53092, -6.23072, 12.2156)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_6e5t1")
+script = ExtResource("7_rprpp")
+
+[node name="37 FC-F5-C4-9C-1D-87" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.45075, -8.33454, -2.68684)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_i8uef")
+script = ExtResource("7_rprpp")
+
+[node name="38 5C-CF-7F-22-1D-69" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -16.9811, -8.32589, -11.194)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_bdmsa")
+script = ExtResource("7_rprpp")
+
+[node name="39 84-F3-EB-1E-23-EE" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.30613, 10.7604, 2.12743)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_y38k5")
+script = ExtResource("7_rprpp")
+
+[node name="40 84-F3-EB-1E-20-D3" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -4.78205, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_vm7qi")
+script = ExtResource("7_rprpp")
+
+[node name="41 5C-CF-7F-22-20-DE" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 12.9973, -6.13077, -11.4171)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_huxq4")
+script = ExtResource("7_rprpp")
+
+[node name="42 A4-E5-7C-3E-25-0F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.092, -5.86919, 11.4446)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_7lilg")
+script = ExtResource("7_rprpp")
+
+[node name="43 8C-AA-B5-5D-26-1B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -6.51995, 3.67327)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_3cs8x")
+script = ExtResource("7_rprpp")
+
+[node name="44 48-3F-DA-56-21-95" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.77793, -7.65141, 21.1812)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_q6r3y")
+script = ExtResource("7_rprpp")
+
+[node name="45 84-F3-EB-1E-25-1A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.51066, -7.8138, 4.98323)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_j6xna")
+script = ExtResource("7_rprpp")
+
+[node name="46 5C-CF-7F-37-35-AE" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.0715, -6.26173, 13.5653)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_olc8o")
+script = ExtResource("7_rprpp")
+
+[node name="47 48-3F-DA-4A-36-0F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 13.6533, 3.2117)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_2pmkw")
+script = ExtResource("7_rprpp")
+
+[node name="48 60-01-94-24-27-C3" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.80328, -1.74055, -21.8077)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_e34em")
+script = ExtResource("7_rprpp")
+
+[node name="49 84-F3-EB-1E-27-DC" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 10.7279, -3.45795, -9.81332)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ndluu")
+script = ExtResource("7_rprpp")
+
+[node name="50 48-3F-DA-5A-28-91" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.9167, -6.19966, -12.8309)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_v0dsk")
+script = ExtResource("7_rprpp")
+
+[node name="51 84-F3-EB-1E-28-93" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.96981, -7.54937, -15.3051)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_2lsia")
+script = ExtResource("7_rprpp")
+
+[node name="52 84-F3-EB-1E-2A-C1" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.42153, -6.11131, -12.0472)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_egkd3")
+script = ExtResource("7_rprpp")
+
+[node name="53 84-F3-EB-1E-2C-1F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.80203, 0.766943, 10.107)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_nr1be")
+script = ExtResource("7_rprpp")
+
+[node name="54 40-F5-20-26-2C-8F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -0.919857, 0, -19.9058)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_vfg4n")
+script = ExtResource("7_rprpp")
+
+[node name="55 84-F3-EB-1E-2C-C2" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.8934, -7.64256, -18.5119)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_kopss")
+script = ExtResource("7_rprpp")
+
+[node name="56 B4-E6-2D-32-2D-7F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.48021, 13.1509, 1.52916)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_kdb7d")
+script = ExtResource("7_rprpp")
+
+[node name="57 CC-50-E3-1E-38-CC" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.85774, 15.1973, 2.31042)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_de54c")
+script = ExtResource("7_rprpp")
+
+[node name="58 84-F3-EB-21-37-8D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.49057, 7.24967, 2.72635)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_3rvjg")
+script = ExtResource("7_rprpp")
+
+[node name="59 48-3F-DA-4B-47-35" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.43887, 10.7035, -6.38397)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_kegt6")
+script = ExtResource("7_rprpp")
+
+[node name="60 84-F3-EB-1E-28-42" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -1.79396, -6.82075)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_e5l1b")
+script = ExtResource("7_rprpp")
+
+[node name="61 4C-75-25-0E-3A-D9" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.91062, -10.9406, -4.39347)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_vwbf2")
+script = ExtResource("7_rprpp")
+
+[node name="62 48-3F-DA-5C-3B-6C" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -4.05433, 6.85038, -3.9001)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_c0axr")
+script = ExtResource("7_rprpp")
+
+[node name="63 8C-CE-4E-D0-3C-41" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -11.7742, -5.50766, -9.72546)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ko5pb")
+script = ExtResource("7_rprpp")
+
+[node name="64 BC-FF-4D-0D-3D-57" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 1.19563, -18.6058)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_lq5tj")
+script = ExtResource("7_rprpp")
+
+[node name="65 8C-CE-4E-D0-3C-BD" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -4.99244, -5.79238, -12.6485)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_7ol8l")
+script = ExtResource("7_rprpp")
+
+[node name="66 BC-FF-4D-0C-30-93" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.29163, -7.04099, -12.6367)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_dg423")
+script = ExtResource("7_rprpp")
+
+[node name="67 30-83-98-BB-44-06" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.4497, 2.87547, -25.2314)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_4x4n2")
+script = ExtResource("7_rprpp")
+
+[node name="68 24-A1-60-27-45-01" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.81988, -0.668684, -12.8748)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_6c42p")
+script = ExtResource("7_rprpp")
+
+[node name="69 48-3F-DA-4A-43-AF" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -4.35403, -3.56648, -11.6648)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_1d4vx")
+script = ExtResource("7_rprpp")
+
+[node name="70 C4-5B-BE-C4-43-CE" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -0.959527, -3.66539, -10.6572)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_xnd3l")
+script = ExtResource("7_rprpp")
+
+[node name="71 B4-E6-2D-71-48-7D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.1142, 12.0863, -9.20222)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_613xx")
+script = ExtResource("7_rprpp")
+
+[node name="72 EC-FA-BC-54-4D-1B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.443, 0.0875835, -12.8381)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_43gg8")
+script = ExtResource("7_rprpp")
+
+[node name="73 DC-4F-22-4C-56-03" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.98315, 2.4665, 1.33916)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_eetl7")
+script = ExtResource("7_rprpp")
+
+[node name="74 E8-DB-84-B0-5A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.70942, 0.606234, -20.8192)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_a3y0f")
+script = ExtResource("7_rprpp")
+
+[node name="75 A4-CF-12-BE-6C-5E" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.34612, 0, 2.85472)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_hmv42")
+script = ExtResource("7_rprpp")
+
+[node name="76 94-B9-7E-19-5E-32" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.59929, 5.81798, -8.04017)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ndtxy")
+script = ExtResource("7_rprpp")
+
+[node name="77 E8-DB-84-B7-6D-0A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.3898, -5.65003, -6.41767)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d5ry6")
+script = ExtResource("7_rprpp")
+
+[node name="78 68-C6-3A-AD-6E-53" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 11.9345, -7.42415)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_f145v")
+script = ExtResource("7_rprpp")
+
+[node name="79 84-F3-EB-B2-61-66" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.67486, -10.738, -14.4726)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_xvsam")
+script = ExtResource("7_rprpp")
+
+[node name="80 E8-DB-84-8B-62-8B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -7.11864, -1.32356, -9.60592)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_beijh")
+script = ExtResource("7_rprpp")
+
+[node name="81 4C-11-AE-10-65-0F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 8.58518, -7.55068, -10.3075)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_64ol5")
+script = ExtResource("7_rprpp")
+
+[node name="82 A4-CF-12-BC-64-B3" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.77821, 0, -22.8079)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_3xbye")
+script = ExtResource("7_rprpp")
+
+[node name="83 68-C6-3A-AD-64-8E" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.85908, -13.5019, -10.6677)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_xang2")
+script = ExtResource("7_rprpp")
+
+[node name="84 CC-50-E3-3D-6C-5F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.39152, -0.343912, -20.6681)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_w03nt")
+script = ExtResource("7_rprpp")
+
+[node name="85 DC-4F-22-42-74-B0" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.12922, 0.632511, -13.9813)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_iamhl")
+script = ExtResource("7_rprpp")
+
+[node name="86 DC-4F-22-42-74-F2" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.4079, -11.6097, -4.82089)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_58jsa")
+script = ExtResource("7_rprpp")
+
+[node name="87 18-FE-34-D9-75-45" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.63777, -15.7115, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_2p41e")
+script = ExtResource("7_rprpp")
+
+[node name="88 84-F3-EB-1E-18-98" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 10.3568, -7.39013, 5.20928)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_tc4wt")
+script = ExtResource("7_rprpp")
+
+[node name="89 CC-50-E3-3B-29-71" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 5.2334, -7.16944, 21.4673)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_hrjpt")
+script = ExtResource("7_rprpp")
+
+[node name="90 40-F5-20-22-2E-3E" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.79351, -8.12973, 10.2901)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_82d8q")
+script = ExtResource("7_rprpp")
+
+[node name="91 84-0D-8E-A6-20-BF" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 16.4631, -9.04154, 5.95043)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_e1h1y")
+script = ExtResource("7_rprpp")
+
+[node name="92 84-F3-EB-1E-28-67" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.00834, -10.0612, 4.7789)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_p6ypu")
+script = ExtResource("7_rprpp")
+
+[node name="93 CC-50-E3-1E-38-D1" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.07452, -4.14601, 8.51852)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_86ux3")
+script = ExtResource("7_rprpp")
+
+[node name="94 CC-50-E3-1E-38-E5" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.457, 2.10317, 3.13943)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_7ibcl")
+script = ExtResource("7_rprpp")
+
+[node name="95 84-F3-EB-1E-2A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -5.73435, 5.32207, -1.8942)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d65a0")
+script = ExtResource("7_rprpp")
+
+[node name="96 5C-CF-7F-F9-31-50" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -4.29458, -7.43245, 5.20287)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_4afuc")
+script = ExtResource("7_rprpp")
+
+[node name="97 48-3F-DA-5D-2A-3B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -8.47426, -6.63389, 3.81498)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ugi21")
+script = ExtResource("7_rprpp")
+
+[node name="98 84-F3-EB-E1-33-9F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.66808, -8.75028, 17.8423)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_6fo8u")
+script = ExtResource("7_rprpp")
+
+[node name="99 BC-FF-4D-0C-42-BB" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.79268, -13.7769, 8.32212)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_fmbne")
+script = ExtResource("7_rprpp")
+
+[node name="100 84-CC-A8-A8-38-6D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -12.4454, -12.0474, 5.68109)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ka5f5")
+script = ExtResource("7_rprpp")
+
+[node name="101 E8-DB-84-DC-2F-8C" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -0.287707, -8.16399, 8.42862)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_65h4o")
+script = ExtResource("7_rprpp")
+
+[node name="102 10-52-1C-E2-3C-57" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.25733, -11.3751, 13.1207)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_2jo6y")
+script = ExtResource("7_rprpp")
+
+[node name="103 94-B9-7E-19-50-11" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -8.67355, 3.0301)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ntnfk")
+script = ExtResource("7_rprpp")
+
+[node name="104 8C-CE-4E-CC-51-0F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0.718046, -11.8463, 5.88874)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_32jd5")
+script = ExtResource("7_rprpp")
+
+[node name="105 40-F5-20-26-4C-CF" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -16.4855, -12.432, 5.79205)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_fbbya")
+script = ExtResource("7_rprpp")
+
+[node name="106 84-CC-A8-87-3C-47" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.5242, 0, 9.18967)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_7r2ip")
+script = ExtResource("7_rprpp")
+
+[node name="107 94-B9-7E-1A-56-74" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.9956, -5.81262, 1.68609)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_0mdsc")
+script = ExtResource("7_rprpp")
+
+[node name="108 30-83-98-9E-59-C5" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.21122, -8.41654, 13.0273)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_46dyb")
+script = ExtResource("7_rprpp")
+
+[node name="109 C8-2B-96-29-6C-7C" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -14.1201, -12.0938, 7.04467)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_lpw6t")
+script = ExtResource("7_rprpp")
+
+[node name="110 F4-CF-A2-FC-6A-5C" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -1.95554, 7.0438)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_wcct8")
+script = ExtResource("7_rprpp")
+
+[node name="111 C4-5B-BE-C3-61-53" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.7879, -6.07552, 12.5167)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_81j85")
+script = ExtResource("7_rprpp")
+
+[node name="112 84-0D-8E-B7-6C-AE" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.81582, -8.00751, 8.55148)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ydruf")
+script = ExtResource("7_rprpp")
+
+[node name="113 2C-F4-32-3D-65-C1" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.90854, -7.34968, 20.1912)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_bumr2")
+script = ExtResource("7_rprpp")
+
+[node name="114 CC-50-E3-6E-57-22" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.58667, -13.8763, 4.33309)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_86b5f")
+script = ExtResource("7_rprpp")
+
+[node name="115 A4-CF-12-BC-66-4F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -16.5099, 3.47887)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_my8la")
+script = ExtResource("7_rprpp")
+
+[node name="116 18-FE-34-D9-76-4A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.5279, -15.9306, 2.80764)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_lajgx")
+script = ExtResource("7_rprpp")
+
+[node name="117 D8-F1-5B-08-BF-E1" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.29735, -16.3945, 12.0035)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_fm6h1")
+script = ExtResource("7_rprpp")
+
+[node name="118 BC-FF-4D-0C-8B-EC" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.48998, -11.3552, 15.6402)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_jbh76")
+script = ExtResource("7_rprpp")
+
+[node name="119 5C-CF-7F-12-BC-C4" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.96333, -6.36391, 12.9997)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="120 94-B9-7E-19-D1-96" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.5436, -5.29681, 13.1472)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="121 E8-DB-84-C0-49-7A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.299934, 0, -0.0062932, 0, 0.5, 0, 0.0062932, 0, 0.299934, 3.27798, -9.70015, -16.3949)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="122 FC-F5-C4-98-85-24" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.2542, -5.31121, 13.8504)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="123 5C-CF-7F-12-8B-D1" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.0219, -6.10953, 11.1076)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="124 DC-4F-22-68-8D-8A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.578, -4.71667, 11.2569)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="125 84-F3-EB-E1-B5-3F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.00548, 12.6135, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="126 F4-CF-A2-FA-CD-9B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.35094, -6.09103, 13.6448)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="127 EC-FA-BC-3A-E0-BF" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 13.2277, -7.37991, -10.3935)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="128 E8-DB-84-BB-E1-9C" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.5135, -4.11624, 13.417)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="129 5C-CF-7F-08-FA-FB" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.7928, -6.46312, 11.1538)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="130 84-F3-EB-1E-27-18" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.61586, 10.131, -16.1059)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="131 DC-4F-22-6B-42-2B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -5.32005, 2.57026, -21.708)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="132 AC-0B-FB-F3-42-F2" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -7.09753, -11.8028, -15.7057)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="133 5C-CF-7F-21-52-B8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.54951, -5.61609, -9.71791)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="134 2C-F4-32-3D-57-CD" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.4896, 3.1879, -19.0617)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="135 DC-4F-22-42-76-26" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -7.29765, -12.2874, -18.97)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="136 84-F3-EB-AE-87-FB" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.0819, -7.63118, -12.2485)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="137 BC-FF-4D-D2-70-5A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.93551, 14.2798, -5.08922)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="138 24-62-AB-1B-84-79" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.5277, 4.61361, -19.5636)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="139 50-02-91-F7-8B-79" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.18207, -8.72688, -11.9608)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="140 EC-FA-BC-34-7C-4E" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.00409, 5.96928, -17.0524)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="141 E0-98-06-B1-86-20" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.96481, 13.4187, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="142 E8-DB-84-89-9D-CA" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -5.59588, 0, -9.00014)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="143 BC-DD-C2-4D-9D-71" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 9.78679, -5.35585, -12.9571)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_jk638")
+script = ExtResource("7_rprpp")
+isSelected = true
+light = 1.0
+
+[node name="144 30-83-98-A4-97-8F" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.06167, 0, -13.6602)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="145 8C-AA-B5-0B-8A-ED" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 10.1049, 0, -6.09644)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="146 84-F3-EB-68-AF-A8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -2.29114, 11.7532, 0.898078)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="147 5C-CF-7F-12-BC-24" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 8.43039, 0, -12.4232)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="148 84-CC-A8-B2-BF-52" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.29961, 0, 0.0152929, 0, 0.5, 0, -0.0152929, 0, 0.29961, 0.71717, 0, -13.3042)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="149 94-B9-7E-15-CE-17" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.1359, -13.5242, -17.2982)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="150 CC-50-E3-18-CD-D4" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -1.43663, 6.69977, -1.35336)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="151 FC-F5-C4-9F-C1-9E" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 10.4392, -8.78129, -10.5733)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="152 8C-CE-4E-C1-D1-A0" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 11.6396, -5.85935)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="153 50-02-91-7F-CA-10" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.19219, 12.9822, -5.23768)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="154 A8-48-FA-C8-B0-CB" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0.184148, -4.24452, -20.1795)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="155 10-52-1C-E0-BB-1D" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -3.4282, -0.85133, -12.8565)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="156 DC-4F-22-42-DA-5B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.0584, 0, -1.65715)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="157 A4-CF-12-E8-D3-3A" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 15.1372, -7.53328)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="158 A8-48-FA-C3-C3-A2" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 11.1216, -3.35734, -8.14061)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="159 EC-FA-BC-AF-D5-C7" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -0.771635, 14.8937, 3.07588)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="160 8C-AA-B5-D3-ED-33" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -6.45271, 1.11976, -3.39377)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="161 F4-CF-A2-78-D7-83" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -9.23501, 0, -26.2338)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="162 BC-DD-C2-86-FC-7E" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -13.0903, -8.31623, -10.8059)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="163 5C-CF-7F-08-FC-48" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.5553, -1.53583, -9.25803)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="164 2C-F4-32-53-FC-05" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 9.97868, -18.5841)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="165 84-F3-EB-1E-21-3B" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 10.7667, -0.471365, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="166 84-F3-EB-1E-24-28" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, -8.30855, 8.04771)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="167 84-F3-EB-1E-27-98" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.4206, -4.34496, 13.7989)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+script = ExtResource("7_rprpp")
+
+[node name="168 50-02-91-FA-38-FB" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.7563, -3.66918, 4.88737)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+=======
 [node name="1 8C-CE-4E-D0-0A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.7878, 0, 0)
 mesh = SubResource("BoxMesh_steec")
@@ -92,6 +2097,7 @@ script = ExtResource("7_rprpp")
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.97813, 0, 0)
 mesh = SubResource("BoxMesh_steec")
 surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 script = ExtResource("7_rprpp")
 
 [connection signal="newFlamme" from="Server" to="." method="_on_server_new_flamme"]
