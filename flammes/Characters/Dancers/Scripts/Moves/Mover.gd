@@ -14,6 +14,7 @@ func start() ->void:
 	$"Displayer/Front".set_surface_override_material(0, material)
 	$"Displayer/Back".set_surface_override_material(0, material)
 	
+
 func isReadyToMove() ->bool :
 	var time = Time.get_ticks_msec() - startAt;
 	var isReady =  time > timeOffset

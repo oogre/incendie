@@ -13,6 +13,7 @@ var old_position:Vector3
 var MAC_ADDRESS:Array
 
 var anims : Array[Dictionary]
+
 var timaAtLightOn : float = 0
 var _selected:bool = false
 @export var isSelected :  bool :

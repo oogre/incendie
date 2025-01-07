@@ -12,6 +12,10 @@ transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 0, 0)
 mesh = SubResource("BoxMesh_steec")
 surface_material_override/0 = ExtResource("1_5iap6")
 script = ExtResource("2_pix3i")
+minLight = null
+maxLight = null
+isSelected = null
+light = null
 
 [node name="Area3D" type="Area3D" parent="."]
 

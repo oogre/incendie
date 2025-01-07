@@ -7,14 +7,13 @@ var _inPort:int = 9999
 var _outPort:int = 8888
 
 func _init(inPort:int=_inPort, outPort:int=_outPort, outIP:String=_outIP):
-	self._inPort = inPort 
 	self._outPort = outPort 
 	self._outIP = outIP 
 	server = UDPServer.new()
 	server.listen(inPort)
-	print("OSC server listening port :", inPort, " ",  server.is_listening())
+	print(server.is_listening())
 	
-func _process(delta):
+func _process(_delta):
 	server.poll() # Important!
 	if server.is_connection_available():
 		var peer: PacketPeerUDP = server.take_connection()

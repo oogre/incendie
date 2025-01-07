@@ -1,15 +1,23 @@
+<<<<<<< HEAD
 [gd_scene load_steps=131 format=3 uid="uid://0vt4awjbm81m"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://0vt4awjbm81m"]
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 
 [ext_resource type="Script" path="res://Scripts/Main.gd" id="1_motic"]
 [ext_resource type="PackedScene" uid="uid://bbyesj56o35gr" path="res://Environnement/model.tscn" id="2_a2f6q"]
 [ext_resource type="Script" path="res://Server/Scripts/server_incendie.gd" id="2_r3067"]
 [ext_resource type="Script" path="res://Characters/Bulbs/Scripts/Bulbs.gd" id="4_becy6"]
 [ext_resource type="PackedScene" uid="uid://hsvhoju2itsb" path="res://Characters/Bulbs/bulb.tscn" id="5_cmp2o"]
+<<<<<<< HEAD
 [ext_resource type="Shader" path="res://Characters/Bulbs/Materials/bulb.gdshader" id="6_6gcih"]
+=======
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 [ext_resource type="Script" path="res://Characters/Bulbs/Scripts/Bulb.gd" id="7_rprpp"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_steec"]
 
+<<<<<<< HEAD
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yi4ed"]
 resource_local_to_scene = true
 render_priority = 0
@@ -955,6 +963,9 @@ shader_parameter/green = 1.025
 shader_parameter/blue = 1.465
 
 [sub_resource type="Shader" id="Shader_pqirx"]
+=======
+[sub_resource type="Shader" id="Shader_bbrlh"]
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 code = "shader_type spatial;
 
 uniform float red : hint_range(0.0, 3.0);
@@ -975,14 +986,22 @@ void fragment() {
 //}
 "
 
+<<<<<<< HEAD
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d7o5l"]
 resource_local_to_scene = true
 render_priority = 0
 shader = SubResource("Shader_pqirx")
+=======
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddsqe"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_bbrlh")
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 shader_parameter/red = 0.0
 shader_parameter/green = 0.0
 shader_parameter/blue = 0.0
 
+<<<<<<< HEAD
 [sub_resource type="Shader" id="Shader_558kd"]
 code = "shader_type spatial;
 
@@ -1012,6 +1031,8 @@ shader_parameter/red = 2.0
 shader_parameter/green = 1.0
 shader_parameter/blue = 0.5
 
+=======
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 [node name="Main" type="Node3D"]
 script = ExtResource("1_motic")
 connection = true
@@ -1026,6 +1047,7 @@ conected = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -15)
 script = ExtResource("4_becy6")
 
+<<<<<<< HEAD
 [node name="1 48-3F-DA-65-01-BD" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 0, 0, -7.1226)
 mesh = SubResource("BoxMesh_steec")
@@ -2034,6 +2056,48 @@ script = ExtResource("7_rprpp")
 transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, -10.7563, -3.66918, 4.88737)
 mesh = SubResource("BoxMesh_steec")
 surface_material_override/0 = SubResource("ShaderMaterial_d7o5l")
+=======
+[node name="1 8C-CE-4E-D0-0A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 1.7878, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+script = ExtResource("7_rprpp")
+
+[node name="2 A4-CF-12-FD-3F-E0" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 7.55242, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+script = ExtResource("7_rprpp")
+
+[node name="3 30-83-98-BB-44-06" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6.88919, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+script = ExtResource("7_rprpp")
+
+[node name="4 84-F3-EB-1E-28-42" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 3.76324, 0, 0.1373)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+script = ExtResource("7_rprpp")
+
+[node name="5 E8-DB-84-B0-5A-D8" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 2.91347, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+script = ExtResource("7_rprpp")
+
+[node name="6 48-3F-DA-4A-94-CA" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 6, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+script = ExtResource("7_rprpp")
+
+[node name="7 E8-DB-84-8A-9B-29" type="MeshInstance3D" parent="Bulbs" instance=ExtResource("5_cmp2o")]
+transform = Transform3D(0.3, 0, 0, 0, 0.5, 0, 0, 0, 0.3, 4.97813, 0, 0)
+mesh = SubResource("BoxMesh_steec")
+surface_material_override/0 = SubResource("ShaderMaterial_ddsqe")
+>>>>>>> 3af5eb031b711f62d7c942b6a0e91bb43c4a818b
 script = ExtResource("7_rprpp")
 
 [connection signal="newFlamme" from="Server" to="." method="_on_server_new_flamme"]

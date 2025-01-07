@@ -3,10 +3,12 @@
 #include "NetworkHelper.h"
 #include "ServerHelper.h"
 #include "BulbController.h"
+#include "Simulacre.h"
 #include "secret.h"
 #include "Tools.h"
 // #include "WifiConfHelper.h"
 #include "UDPHelper.h"
+#include "WSHelper.h"
 
 uint16_t myID = 0;
 Tools::MAC_ADDRESS macAddress = Tools::getMacAddress();
@@ -52,6 +54,7 @@ void setup() {
     }
   });
   BulbController::OFF();
+
     
   ServerHelper * api = new ServerHelper();
   int result = api->begin();
@@ -72,7 +75,6 @@ void setup() {
     });
     BulbController::BLINK(2, 50, 50);
     BulbController::ON();
-    
   }
 
   // }else{

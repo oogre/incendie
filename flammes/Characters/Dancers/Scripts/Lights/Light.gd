@@ -8,9 +8,9 @@ var t0 : float
 var hasToBeRemovedWhenExited : bool = false
 
 
-func _init(duration = 1.0):
-	self.duration = duration
-	self.toSpeed = 1.0/duration
+func _init(_duration = 1.0):
+	self.duration = _duration
+	self.toSpeed = 1.0/_duration
 	self.t0 = Time.get_ticks_msec()
 
 func getDuration() -> float:

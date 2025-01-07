@@ -83,13 +83,17 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
 script = ExtResource("12_ailyj")
 lightType = 6
 duration = 10.0
+remove_on_exited = null
 moveType = 3
 dancerCount = 10
+delayBetween = null
 
 [node name="Dancer3" type="Node3D" parent="Dancers"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
 script = ExtResource("12_ailyj")
 lightType = 2
 duration = 3.0
+remove_on_exited = null
 moveType = 3
 dancerCount = 3
+delayBetween = null
