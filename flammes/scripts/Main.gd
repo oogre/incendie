@@ -29,7 +29,7 @@ func _ready() -> void:
 	server.connectServer()
 	connection = true
 	#Engine.max_fps = 24
-	osc = OSC.new(10000, 8000, "127.0.0.1")
+	osc = OSC.new(10000, 9999, "127.0.0.1")
 	add_child(osc)
 	oscOk.emit(osc)
 	

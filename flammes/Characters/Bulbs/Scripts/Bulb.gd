@@ -70,12 +70,14 @@ func updateMaterial() -> void:
 	)
 
 func _process(_delta) -> void:
+	var localLight = light
 	for dancerName in animations:
 		if animations[dancerName].isAlive.call(self):
-			light = animations[dancerName].onAction.call(self)
+			localLight = animations[dancerName].onAction.call(self)
 		else : 
-			light = animations[dancerName].onStop.call(self)
+			localLight = animations[dancerName].onStop.call(self)
 			animations.erase(dancerName)
+	light = localLight
 
 func _on_entered(other: Area3D) -> void:
 	var interactor = other.get_parent();

@@ -65,7 +65,7 @@ script = ExtResource("2_3f025")
 [node name="MODEL" parent="." instance=ExtResource("4_pfplj")]
 
 [node name="Camera" parent="." instance=ExtResource("8_mjn2a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.58847, 3.74869, -7.56457)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.22761, 7.30687, 46.7758)
 disable_mode = 2
 collision_layer = 2
 collision_mask = 2
@@ -79,21 +79,19 @@ shape = SubResource("SphereShape3D_6jxcp")
 script = ExtResource("7_f8rxq")
 
 [node name="Dancer2" type="Node3D" parent="Dancers"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 3.7001, 30.8656, -15)
 script = ExtResource("12_ailyj")
 lightType = 6
 duration = 10.0
-remove_on_exited = null
-moveType = 3
-dancerCount = 10
-delayBetween = null
+remove_on_exited = true
+moveType = 1
+dancerCount = 5
+delayBetween = 3.0
 
 [node name="Dancer3" type="Node3D" parent="Dancers"]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.7001, 30.8656, -15)
 script = ExtResource("12_ailyj")
 lightType = 2
 duration = 3.0
-remove_on_exited = null
 moveType = 3
 dancerCount = 3
-delayBetween = null
