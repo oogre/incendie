@@ -6,6 +6,7 @@ import DB from './DB/index.js'
 import API from './API/index.js'
 import WS from './WS/index.js'
 import BULBS from './BULBS'
+import SOUNDS from './Sounds'
 import BulbSocket from './BulbSocket'
 
 
@@ -20,6 +21,7 @@ const delay = (time)=>{
   const api = await API;
   const ws = await WS;
   const bulbs = await BULBS;
+  const sounds = await SOUNDS;
   const bulbSocket = await BulbSocket;
 
   db.Flamme.onChange(flamme =>{
@@ -28,6 +30,7 @@ const delay = (time)=>{
   
   ws.onBulbs(async data => {
     await bulbs.send(data);
+    await sounds.send(data);
     await bulbSocket.send(data);
   });
 
