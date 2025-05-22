@@ -19,10 +19,11 @@ const MovesScripts : Array[Resource] = [
 	preload("res://Characters/Dancers/Scripts/Moves/Boid.gd"),
 	preload("res://Characters/Dancers/Scripts/Moves/Wave.gd"),
 	preload("res://Characters/Dancers/Scripts/Moves/Grower.gd"),
-	preload("res://Characters/Dancers/Scripts/Moves/CameraAgent.gd")
+	preload("res://Characters/Dancers/Scripts/Moves/CameraAgent.gd"),
+	preload("res://Characters/Dancers/Scripts/Moves/Stay.gd")
 ]
 
-enum MOVE_TYPES { BOID , WAVE, GROWER, CAMERA_AGENT }
+enum MOVE_TYPES { BOID , WAVE, GROWER, CAMERA_AGENT, STAY }
 
 @export_category("Light Animation")
 var _lightType : int
@@ -31,7 +32,7 @@ var _lightType : int
 		_lightType = value
 	get : 
 		return LIGHTS_TYPES[LIGHTS_TYPES.find_key(_lightType)]
-@export_range(0.250, 10.0, 0.250) var duration : float = 1.0;
+@export_range(0, 10.0, 0.250) var duration : float = 1.0;
 
 @export var remove_on_exited : bool = false
 

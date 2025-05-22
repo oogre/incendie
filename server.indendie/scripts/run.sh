@@ -1,3 +1,3 @@
-mongod --dbpath ./data --logpath ./logs/mongodb.log --fork;
+# mongod --dbpath ./data --logpath ./logs/mongodb.log --fork;
 #./scripts/coredns &
 ./release/incendie

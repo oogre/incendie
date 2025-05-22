@@ -1,3 +1,4 @@
+#!/usr/local/bin/node
 "use strict";
 
 var _index = _interopRequireDefault(require("./DB/index.js"));
@@ -6,8 +7,6 @@ var _index3 = _interopRequireDefault(require("./WS/index.js"));
 var _BULBS = _interopRequireDefault(require("./BULBS"));
 var _BulbSocket = _interopRequireDefault(require("./BulbSocket"));
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-//#!/usr/local/bin/node
-
 process.title = "incendie";
 const delay = time => {
   return new Promise(r => {

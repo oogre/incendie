@@ -20,7 +20,7 @@ func getCursor() -> float:
 	return self.getDuration() * self.toSpeed;
 
 func isAlive(_bulb:Bulb) -> bool:
-	return self.hasToBeRemovedWhenExited or self.getDuration() <= self.duration
+	return self.duration == 0 or self.hasToBeRemovedWhenExited or self.getDuration() <= self.duration
 
 func onStart(_bulb:Bulb) -> float:
 	return 1.0
