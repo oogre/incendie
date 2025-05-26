@@ -26,8 +26,7 @@ const BulbSocket = async () => {
 			if(!flamme){
 				if(RECORD_BULB){
 					const MAC_ADDRESS = Buffer.from(Uint8Array.from(data));
-					console.log(MAC_ADDRESS);
-					//flamme = await db.Flamme.create(MAC_ADDRESS);	
+					flamme = await db.Flamme.create(MAC_ADDRESS);	
 				}else{
 					return;	
 				}
