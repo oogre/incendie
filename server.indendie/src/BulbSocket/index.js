@@ -3,13 +3,16 @@ import DB from '../DB/index.js'
 import { WebSocketServer } from 'ws'
 
 const {
-    WS_BULB
+    WS_BULB,
+    RECORD_BULB
 } = dotenv.config().parsed;
 
 const eventHandlers = {
 	bulbs : []
 }
 let clients = [];
+
+
 
 const BulbSocket = async () => {
 	const db = await DB;
@@ -19,9 +22,16 @@ const BulbSocket = async () => {
 		ws.on('message', async data => {
 			if(!Buffer.isBuffer(data) || data.length != 6)
 				return;
-			const [flamme] = await db.Flamme.find(data)
-			if(!flamme)
-				return;
+			let [flamme] = await db.Flamme.find(data)
+			if(!flamme){
+				if(RECORD_BULB){
+					const MAC_ADDRESS = Buffer.from(Uint8Array.from(data));
+					console.log(MAC_ADDRESS);
+					//flamme = await db.Flamme.create(MAC_ADDRESS);	
+				}else{
+					return;	
+				}
+			}
 
 			clients.push({
 				unique_id : flamme.unique_id,
