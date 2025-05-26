@@ -52,6 +52,11 @@ const BulbSocket = async () => {
 				}
 				return false;
 			});
+		},
+		all : async (value)=>{
+			clients.map(async (wsc)=>{
+				wsc.send(Math.round(value), { binary: true });
+			})
 		}
 	}
 }

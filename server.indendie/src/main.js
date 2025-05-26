@@ -24,17 +24,20 @@ const delay = (time)=>{
   const sounds = await SOUNDS;
   const bulbSocket = await BulbSocket;
 
-  db.Flamme.onChange(flamme =>{
-    ws.trigNewFlamme(flamme);
-  });
+  // db.Flamme.onChange(flamme =>{
+  //   ws.trigNewFlamme(flamme);
+  // });
   
-  ws.onBulbs(async data => {
-    await bulbs.send(data);
-    await sounds.send(data);
-    await bulbSocket.send(data);
-  });
+  // ws.onBulbs(async data => {
+  //   await bulbs.send(data);
+  //   await sounds.send(data);
+  //   await bulbSocket.send(data);
+  // });
 
-  
+  setInterval(()=>{
+    bulbSocket.all(Math.random() * 255);
+  }, 50);
+
 })()
 .then(()=>{})
 .catch(()=>{})
