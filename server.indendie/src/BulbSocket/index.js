@@ -54,8 +54,8 @@ const BulbSocket = async () => {
 			});
 		},
 		all : async (value)=>{
-			clients.map(async (wsc)=>{
-				wsc.send(Math.round(value), { binary: true });
+			clients.map(async ({unique_id, wsc})=>{
+				await wsc.send(Math.round(value), { binary: true });
 			})
 		}
 	}
