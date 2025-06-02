@@ -2,16 +2,8 @@
 #define Tools_h
 
 #include <EEPROM.h>
-#include <Arduino.h>
-
-// #include <functional>
-// #include <utility>
 
 class Tools{
-
-    
-    
-
     public :
         static const uint8_t MAX_STRING_LENGTH = 64;
         struct Settings { 
@@ -46,17 +38,17 @@ class Tools{
 
         static bool wait(uint16_t time){
             uint32_t t0 = millis();
-            Serial.printf("WAIT %sseconds", String(1 + time/1000).c_str());
+            // Serial.printf("WAIT %sseconds", String(1 + time/1000).c_str());
             Tools::idle({
                 [t0]() mutable {
                     if(millis()-t0 > 500){
-                        Serial.print(".");
+                        // Serial.print(".");
                         t0 = millis();
                     }
                     return false;
                 }
             }, time, 10);
-            Serial.println("DONE");
+            // Serial.println("DONE");
             return true;
         }
     

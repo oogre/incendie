@@ -27,7 +27,7 @@ const WS = async () => {
 			console.log('websocket error')
 		}
 	});
-	console.log(`The WebSocket server is running on port ${WS_GODOT}`);
+	console.log(`The Controller server is running on port ${WS_GODOT}`);
 
 	return {
 		trigNewFlamme : flamme => {
