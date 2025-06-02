@@ -26,7 +26,10 @@ const BULBS = async () => {
       promise = new Promise((resolve, reject) => {
         server.send(buffer, 0, buffer.length, PORT, IP, function (err) {
           promise = undefined;
-          if (err) reject(err);else resolve();
+          if (err) {
+            console.log(err);
+            reject(err);
+          } else resolve();
         });
       });
       return promise;

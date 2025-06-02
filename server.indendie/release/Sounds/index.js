@@ -15,7 +15,7 @@ const INPORT = parseInt(process.env.SOUND_IN_PORT);
 server.bind(INPORT, () => {
   server.setBroadcast(false);
 });
-const BULBS = async () => {
+const SOUNDS = async () => {
   let promise;
   return {
     send: async buffer => {
@@ -24,6 +24,7 @@ const BULBS = async () => {
         return;
       }
       promise = new Promise((resolve, reject) => {
+        //	console.log(buffer)
         server.send(buffer, 0, buffer.length, PORT, IP, function (err) {
           promise = undefined;
           if (err) reject(err);else resolve();
@@ -33,4 +34,4 @@ const BULBS = async () => {
     }
   };
 };
-var _default = exports.default = BULBS();
+var _default = exports.default = SOUNDS();

@@ -9,7 +9,8 @@ var _index = _interopRequireDefault(require("../DB/index.js"));
 var _ws = require("ws");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 const {
-  WS_BULB
+  WS_BULB,
+  RECORD_BULB
 } = _dotenv.default.config().parsed;
 const eventHandlers = {
   bulbs: []
@@ -23,19 +24,30 @@ const BulbSocket = async () => {
   sockserver.on('connection', async ws => {
     console.log('New BULB client connected!');
     ws.on('message', async data => {
+      console.log(data);
       if (!Buffer.isBuffer(data) || data.length != 6) return;
-      const [flamme] = await db.Flamme.find(data);
-      if (!flamme) return;
+      let [flamme] = await db.Flamme.find(data);
+      if (!flamme) {
+        if (RECORD_BULB) {
+          const MAC_ADDRESS = Buffer.from(Uint8Array.from(data));
+          flamme = await db.Flamme.create(MAC_ADDRESS);
+        } else {
+          return;
+        }
+      }
       clients.push({
         unique_id: flamme.unique_id,
         wsc: ws
       });
     });
-    ws.on('close', () => console.log('Client has disconnected!'));
+    ws.on('close', () => {
+      console.log('Client has disconnected!');
+    });
     ws.onerror = function () {
       console.log('websocket error');
     };
   });
+  console.log("bulbServer Listening on PORT:", WS_BULB);
   return {
     send: async buffer => {
       clients = await clients.filter(async ({
@@ -44,6 +56,20 @@ const BulbSocket = async () => {
       }) => {
         if (wsc.readyState === WebSocket.OPEN && unique_id < buffer.length) {
           await wsc.send(buffer[unique_id], {
+            binary: true
+          });
+          return true;
+        }
+        return false;
+      });
+    },
+    all: async value => {
+      clients = clients.filter(async ({
+        unique_id,
+        wsc
+      }) => {
+        if (wsc.readyState === WebSocket.OPEN) {
+          await wsc.send(Math.round(value), {
             binary: true
           });
           return true;
