@@ -18,10 +18,10 @@ const delay = (time)=>{
 
 (async ()=>{
   const db = await DB;
-  const api = await API;
-  const ws = await WS;
-  const bulbs = await BULBS;
-  const sounds = await SOUNDS;
+  //const api = await API;
+  //const ws = await WS;
+  //const bulbs = await BULBS;
+  //const sounds = await SOUNDS;
   const bulbSocket = await BulbSocket;
 
   // db.Flamme.onChange(flamme =>{
@@ -34,8 +34,17 @@ const delay = (time)=>{
   //   await bulbSocket.send(data);
   // });
 
+
+  let t0 = new Date().getTime();
+  const cycle = 1.0/(1000 * 60 * 60);
+
+  const millis = ()=> new Date().getTime() - t0;
+
   setInterval(()=>{
-    bulbSocket.all(Math.random() * 255);
+    let offset = Math.sin(millis() * cycle * 11 * Math.PI * 2) * 5 + 5;
+    let baseLum = Math.sin(millis() * cycle * Math.PI * 2) * 0.4 + 0.5 + ( lerp(-offset, offset, Math.random())*0.01);
+
+    bulbSocket.all(baseLum * 255);
   }, 50);
 
 })()

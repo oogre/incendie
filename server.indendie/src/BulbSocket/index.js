@@ -20,6 +20,7 @@ const BulbSocket = async () => {
 	sockserver.on('connection', async ws => {
 		console.log('New BULB client connected!');
 		ws.on('message', async data => {
+			console.log(data);
 			if(!Buffer.isBuffer(data) || data.length != 6)
 				return;
 			let [flamme] = await db.Flamme.find(data)
@@ -37,11 +38,17 @@ const BulbSocket = async () => {
 				wsc : ws
 			});
 		});
-		ws.on('close', () => console.log('Client has disconnected!'))
+		
+		ws.on('close', () => {
+
+			console.log('Client has disconnected!');
+		});
 		ws.onerror = function () {
 			console.log('websocket error')
 		}
 	});
+
+	console.log("bulbServer Listening on PORT:", WS_BULB);
 
 	return {
 		send : async (buffer)=>{
@@ -54,8 +61,12 @@ const BulbSocket = async () => {
 			});
 		},
 		all : async (value)=>{
-			clients.map(async ({unique_id, wsc})=>{
-				await wsc.send(Math.round(value), { binary: true });
+			clients = clients.filter(async ({unique_id, wsc})=>{
+				if (wsc.readyState === WebSocket.OPEN) {
+					await wsc.send(Math.round(value), { binary: true });
+					return true
+				}
+				return false;
 			})
 		}
 	}
