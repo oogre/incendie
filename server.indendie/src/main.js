@@ -10,6 +10,10 @@ import SOUNDS from './Sounds'
 import BulbSocket from './BulbSocket'
 
 
+const clamp = (a, min = 0, max = 1) => Math.min(max, Math.max(min, a));
+const lerp = ( a, b, alpha ) => a + alpha * ( b - a );
+const invlerp = (x, y, a) => clamp((a - x) / (y - x));
+
 const delay = (time)=>{
   return new Promise(r =>{
     setTimeout(()=>r(), time);
