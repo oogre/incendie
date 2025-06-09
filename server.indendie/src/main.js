@@ -48,7 +48,7 @@ const delay = (time)=>{
     bulbSocket.all((id)=>{
       let offset = Math.sin(id + millis() * cycle * 11 * Math.PI * 2) * 5 + 5;
       let baseLum = Math.sin(id + millis() * cycle * Math.PI * 2) * 0.4 + 0.5 + ( lerp(-offset, offset, Math.random())*0.01);
-      return baseLum * 255;
+      return Math.floor(255);
     });
   }, 50);
 

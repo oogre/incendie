@@ -60,10 +60,10 @@ const BulbSocket = async () => {
 				return false;
 			});
 		},
-		all : async (value)=>{
+		all : async (lumHandler)=>{
 			clients = clients.filter(async ({unique_id, wsc})=>{
 				if (wsc.readyState === WebSocket.OPEN) {
-					await wsc.send(Math.round(value), { binary: true });
+					await wsc.send(lumHandler(unique_id), { binary: true });
 					return true
 				}
 				return false;
