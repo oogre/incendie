@@ -45,10 +45,11 @@ const delay = (time)=>{
   const millis = ()=> new Date().getTime() - t0;
 
   setInterval(()=>{
-    let offset = Math.sin(millis() * cycle * 11 * Math.PI * 2) * 5 + 5;
-    let baseLum = Math.sin(millis() * cycle * Math.PI * 2) * 0.4 + 0.5 + ( lerp(-offset, offset, Math.random())*0.01);
-
-    bulbSocket.all(baseLum * 255);
+    bulbSocket.all((id)=>{
+      let offset = Math.sin(id + millis() * cycle * 11 * Math.PI * 2) * 5 + 5;
+      let baseLum = Math.sin(id + millis() * cycle * Math.PI * 2) * 0.4 + 0.5 + ( lerp(-offset, offset, Math.random())*0.01);
+      return baseLum * 255;
+    });
   }, 50);
 
 })()
