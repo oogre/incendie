@@ -2,11 +2,11 @@
 
 process.title = "incendie"
 
-import DB from './DB/index.js'
-import API from './API/index.js'
-import WS from './WS/index.js'
-import BULBS from './BULBS'
-import SOUNDS from './Sounds'
+//import DB from './DB/index.js'
+//import API from './API/index.js'
+//import WS from './WS/index.js'
+//import BULBS from './BULBS'
+//import SOUNDS from './Sounds'
 import BulbSocket from './BulbSocket'
 
 
@@ -21,7 +21,7 @@ const delay = (time)=>{
 }
 
 (async ()=>{
-  const db = await DB;
+  //const db = await DB;
   //const api = await API;
   //const ws = await WS;
   //const bulbs = await BULBS;
